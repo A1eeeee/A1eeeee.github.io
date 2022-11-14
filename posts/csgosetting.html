@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ada1.top/img/csgo.jpg">
 <meta property="article:published_time" content="2022-03-01T15:47:01.000Z">
-<meta property="article:modified_time" content="2022-11-13T22:16:20.714Z">
+<meta property="article:modified_time" content="2022-11-14T06:44:55.594Z">
 <meta property="article:author" content="Ale">
 <meta property="article:tag" content="CSGO">
 <meta property="article:tag" content="CSGO-Config">
@@ -150,6 +150,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-gitlab-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -253,31 +265,21 @@
               <div class="markdown-body">
                 
                 <h1 id="CSGO游戏设置"><a href="#CSGO游戏设置" class="headerlink" title="CSGO游戏设置"></a>CSGO游戏设置</h1><h2 id="关闭鼠标加速度"><a href="#关闭鼠标加速度" class="headerlink" title="关闭鼠标加速度"></a>关闭鼠标加速度</h2><p>开启鼠标加速度不利于肌肉记忆，控制鼠标。<br>打开控制面板(小图标)-&gt;鼠标-&gt;指针选项-&gt;关闭提高指针精准度<br><img src="/img/shubiao.png" srcset="/img/loading.gif" lazyload><br>同 时在游戏里关闭鼠标加速度设置和开启原始输入<br><img src="/img/shubiao1.jpg" srcset="/img/loading.gif" lazyload></p>
-<h2 id="设置键盘"><a href="#设置键盘" class="headerlink" title="设置键盘"></a>设置键盘</h2><p>打开控制面板—&gt;键盘<br>重复延迟、重复速度拉到最右边<br><img src="/img/jianpan.png" srcset="/img/loading.gif" lazyload></p>
-<p class="note note-danger">
-谨慎设置，过快的反应，也会导致急停出现问题。
-</p>
-
 <h2 id="游戏中画面设置"><a href="#游戏中画面设置" class="headerlink" title="游戏中画面设置"></a>游戏中画面设置</h2><p>游戏中的画面设置基本都是最低，达到帧数稳定和降低烟雾，火等道具对视野的影响</p>
-<p><img src="/img/huamian1.jpg" srcset="/img/loading.gif" lazyload><br><img src="/img/huamian2.jpg" srcset="/img/loading.gif" lazyload><br>分辨率设置就是要看个人喜好了。<br>分辨率低，人物模型大，视野小<br>分辨率高，人物模型小，视野大<br>以下是4：3分辨率1280x960 VS 16：9分辨率1920：1080</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/huamian1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/huamian2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
+<p>分辨率设置就是要看个人喜好了。<br>分辨率低，人物模型大，视野小<br>分辨率高，人物模型小，视野大<br>以下是4：3分辨率1280x960 VS 16：9分辨率1920：1080</p>
 <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/duibi1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/duibi2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-<h2 id="启动项"><a href="#启动项" class="headerlink" title="启动项"></a>启动项</h2><p>右键CSGO-&gt;属性-&gt;启动选项输入即可<br><img src="/img/qidongxiang.png" srcset="/img/loading.gif" lazyload></p>
-<div class="code-wrapper"><pre><code class="hljs diff"><span class="hljs-deletion">-worldwide</span>
-<span class="hljs-deletion">-perfectworld</span>
-<span class="hljs-deletion">-novid</span>
-<span class="hljs-deletion">-tickrate 128</span>
-<span class="hljs-deletion">-freq 240 </span>
-分别对应：
-国际服
-国服
-关闭开场动画（仅国际服有效）
-开启本地128tick
-刷新率 240(如果仅有一台显示器不需要设置)</code></pre></div>
+<h2 id="启动项"><a href="#启动项" class="headerlink" title="启动项"></a>启动项</h2><p>Steam中右键CSGO-&gt;属性-&gt;启动选项输入即可</p>
+<div class="code-wrapper"><pre><code class="hljs awk">-worldwide  <span class="hljs-regexp">//</span>国际服
+-perfectworld  <span class="hljs-regexp">//</span>国服
+-novid  <span class="hljs-regexp">//</span>关闭开场动画（仅国际服有效）
+-tickrate <span class="hljs-number">128</span> <span class="hljs-regexp">//</span>开启本地<span class="hljs-number">128</span>tick
+-freq <span class="hljs-number">240</span> <span class="hljs-regexp">//</span>刷新率 <span class="hljs-number">240</span>(如果仅有一台显示器不需要设置)</code></pre></div>
 </p>
 
 
 <h2 id="游戏设置储存文件夹"><a href="#游戏设置储存文件夹" class="headerlink" title="游戏设置储存文件夹"></a>游戏设置储存文件夹</h2><ol>
-<li>730文件夹<br>存储这个人游戏设置<br>文件夹地址：Steam\userdata\数字ID\730（每个steam对应不同数字ID）</li>
+<li>730文件夹<br>存储这个人游戏设置<br>文件夹地址：Steam\userdata\数字ID\730（每个steam账号对应不同数字ID）</li>
 <li>config文件<br>存放个人按键设置，准星<br>文件夹地址：Steam\userdata\数字ID\730\local\cfg</li>
 </ol>
 <h2 id="本地跑图cfg"><a href="#本地跑图cfg" class="headerlink" title="本地跑图cfg"></a>本地跑图cfg</h2><p>在文件夹cfg中创建practice.cfg文件并复制一下代码保存，并在控制台输入<br>exec practice.cfg即可开始跑图</p>
@@ -294,8 +296,8 @@ bind  leftarrow  <span class="hljs-string">&quot;bot_stop 1;bot_place&quot;</spa
 bind  rightarrow <span class="hljs-string">&quot;mp_restartgame 1&quot;</span>                                           <span class="hljs-regexp">//</span>重新开始游戏
 
 
-bind [ <span class="hljs-string">&quot;script storeB();con_logfile cfg/B.log; getpos; con_logfile 0&quot;</span>    <span class="hljs-regexp">//</span>保存点B
-bind ] <span class="hljs-string">&quot;script loadB();exec B.log&quot;</span>                                       <span class="hljs-regexp">//</span>回到点B
+bind [ <span class="hljs-string">&quot;script storeB();con_logfile cfg/B.log; getpos; con_logfile 0&quot;</span>    <span class="hljs-regexp">//</span>保存当前点
+bind ] <span class="hljs-string">&quot;script loadB();exec B.log&quot;</span>                                       <span class="hljs-regexp">//</span>回到保存点
 
 <span class="hljs-regexp">//</span>一键加速时间 替身使者<span class="hljs-string">&quot;天堂制造&quot;</span> （让烟雾弹和燃烧弹快速消失）
 alias +Pucci   <span class="hljs-string">&quot;host_timescale 25&quot;</span>
@@ -388,32 +390,6 @@ script_execute practiceExt	<span class="hljs-regexp">//</span>再加载一次脚
 跑图文件作者：<a class="btn" target="_blank" rel="noopener" href="https://hlae.site/topic/462/%E5%8E%9F%E5%88%9B-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0-csgo-config-presets-cfg%E9%A2%84%E8%AE%BE/2" title="Purp1e">Purp1e</a>
 </p>
 
-<h2 id="自动加载文件（autoexec-cfg）"><a href="#自动加载文件（autoexec-cfg）" class="headerlink" title="自动加载文件（autoexec.cfg）"></a>自动加载文件（autoexec.cfg）</h2><p>开启CSGO时autoexec.cfg文件内容会被自动加载，所以我们在里面添加一些常用且需要每次登录都需要重新输入才能生效的一些指令<br>在Steam\userdata\数字ID\730\local\cfg创建一个名为：autoexec.cfg文件并输入：</p>
-<div class="code-wrapper"><pre><code class="hljs 1c"><span class="hljs-comment">//每秒传输的数据包容量总共大小设置为：786432（最大值） </span>
-rate <span class="hljs-string">&quot;786432&quot;</span>
-<span class="hljs-comment">//最大FPS限制 </span>
-fps_max <span class="hljs-string">&quot;250&quot;</span>
-
-cl_cmdrate <span class="hljs-string">&quot;128&quot;</span>
-cl_updaterate <span class="hljs-string">&quot;128&quot;</span>
-<span class="hljs-comment">// 延迟补偿</span>
-cl_interp <span class="hljs-number">0.031000</span><span class="hljs-string">&quot;</span>
-cl_interp_ratio <span class="hljs-string">&quot;2&quot;</span>  
-
-<span class="hljs-comment">// 下载上传为128tick</span>
-cl_cmdrate <span class="hljs-string">&quot;128&quot;</span>
-cl_updaterate <span class="hljs-string">&quot;128&quot;</span>
-</code></pre></div>
-<p class="note note-success">
-关于延迟选择1还是2请看
-<a href="https://zhuanlan.zhihu.com/p/110416419" target="_blank">CSGO控制台参数解释</a>
-simple：cl_interp 0.031000。"
-cl_interp_ratio "2"
-b1t: cl_interp_ratio "1"
-具体选择看个人网速，及个人习惯
-</p>
-
-
 <h2 id="键位绑定"><a href="#键位绑定" class="headerlink" title="键位绑定"></a>键位绑定</h2><p>绑定键位需要开启控制台。<br>打开游戏-&gt;设置-&gt;游戏设置-&gt;启用开发者控制台-&gt;是<br>然后按“ &#96; ”（esc下面那个键位）打开控制台页面，输入代码即可</p>
 <ol>
 <li>快速闪光弹</li>
@@ -439,15 +415,11 @@ b1t: cl_interp_ratio "1"
 </ol>
 <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">bind</span> <span class="hljs-string">&quot;SHIFT&quot;</span> <span class="hljs-string">&quot;+speed;r_cleardecals&quot;</span></code></pre></div>
 <ol start="6">
-<li>大跳</li>
+<li>大跳（每次开启游戏都有输入一次）</li>
 </ol>
 <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span> +cjump <span class="hljs-string">&quot;+jump; +duck&quot;</span>
 <span class="hljs-built_in">alias</span> -cjump <span class="hljs-string">&quot;-jump; -duck&quot;</span>
-<span class="hljs-built_in">bind</span> <span class="hljs-string">&quot;c&quot;</span> <span class="hljs-string">&quot;+cjump</span></code></pre></div>
-<p class="note note-danger">
-此指令退出客户端就失效，所以我们将此代码输入autoexec.cfg中，每次开启游戏自动执行
-如果没有执行此文件控制台输入exec autoexec.cfg
-</p>
+<span class="hljs-built_in">bind</span> <span class="hljs-string">&quot;c&quot;</span> <span class="hljs-string">&quot;+cjump  </span></code></pre></div>
 
 <ol start="7">
 <li>十字准星</li>
@@ -457,7 +429,10 @@ b1t: cl_interp_ratio "1"
 控制台输入cl_crosshairsize下面会自动显示当前准星尺寸，999为延长准星长度
 </p>
 
-<h2 id="Text-Mod"><a href="#Text-Mod" class="headerlink" title="Text Mod"></a>Text Mod</h2><p>简化击杀信息，聊天栏信息（自定义游戏语言）<br>如图：<br><img src="/img/textmod1.png" srcset="/img/loading.gif" lazyload><br><img src="/img/textmod2.png" srcset="/img/loading.gif" lazyload><br><a class="btn" target="_blank" rel="noopener" href="https://gamebanana.com/mods/38438" title="下载">官方版本下载</a></p>
+<h2 id="Text-Mod"><a href="#Text-Mod" class="headerlink" title="Text Mod"></a>Text Mod</h2><p>简化击杀信息，聊天栏信息（自定义游戏语言）<br>如图：</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/textmod1.png" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/textmod2.png" srcset="/img/loading.gif" lazyload></div></div></div>
+
+<p><a class="btn" target="_blank" rel="noopener" href="https://gamebanana.com/mods/38438" title="下载">官方版本下载</a></p>
 <p class="note note-danger">
 使用此文件，系统语言会默认为英语，如果使用汉语需要把所有英语全部翻译一遍，包括枪、往年大行动说明等等，我自己使用的仅是重要信息汉化，其他还是英文。
 </p>
@@ -477,29 +452,6 @@ b1t: cl_interp_ratio "1"
 <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2185699891&searchtext=" target="_blank">CSGOHUB.com Skills Training Map</a>Bot训练，准星，KZ</li>
 <li><a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jason-bourne/myworkshopfiles/?appid=730">作者CTX”系列</a>剧情闯关工坊</li>
 </ol>
-<h1 id="第三方对战平台"><a href="#第三方对战平台" class="headerlink" title="第三方对战平台"></a>第三方对战平台</h1><h2 id="Faceit对战平台"><a href="#Faceit对战平台" class="headerlink" title="Faceit对战平台"></a><a href="https://www.faceit.com/" target="_blank">Faceit对战平台</a></h2><p><img src="/img/faceit.png" srcset="/img/loading.gif" lazyload alt="IDM"><br>付费：4.17美元&#x2F;月（单独CSGO对战），7.99美元&#x2F;月（全游戏）<br>特点：可不下载软件，直接页面进行匹配。同时可进行TF2，LOL，DOTA2，PUBG对战。可遇到职业哥<br>缺点：中国没有服务器需要开加速器。最近是新加坡服务器。<br>登录方式：邮箱账号<br>反外挂：反外挂极高，只要平台被封，那么你的CSGO也会被VAC。</p>
-<h2 id="B5对战平台（国内）"><a href="#B5对战平台（国内）" class="headerlink" title="B5对战平台（国内）"></a><a href="https://www.b5csgo.plus/" target="_blank">B5对战平台（国内）</a></h2><p><img src="/img/b5.png" srcset="/img/loading.gif" lazyload alt="IDM"></p>
-<p>运营商：苏州对战信息科技有限公司<br>付费：收费-15元&#x2F;31天 40元&#x2F;93天 144元&#x2F;372天<br>特点：无广告，无任何无关游戏的道具，默认队伤。<br>缺点：玩家基数小<br>登录方式：微信<br>反外挂：扫盘，反外挂力度大（硬盘含有任何游戏外挂都会被封）</p>
-<details>
-<summary>B5官网</summary>
-<iframe src="https://www.b5csgo.plus/" width="100%" height="500" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
-</details>
-
-<h2 id="完美对战平台（国内）"><a href="#完美对战平台（国内）" class="headerlink" title="完美对战平台（国内）"></a><a href="https://pvp.wanmei.com/" target="_blank">完美对战平台（国内）</a></h2><p><img src="/img/wanmei.png" srcset="/img/loading.gif" lazyload alt="IDM"></p>
-<p>运营商：完美世界征奇(上海)多媒体科技有限公司<br>收费：免费-区别绿色与非绿色玩家（游戏内容无法别。但非绿色炸鱼或者外挂偏多），绿色认证需要达到官方要求（游戏时间，游戏价值等因素）<br>特点：免费使用（区别绿色和非绿色玩家），承办中国RMR赛区，周末联赛,道具训练，创意工坊下载等功能，免费使用<br>缺点：越来越多花里胡哨的功能：通行证（奖励：只适用于平台，动态头像，mvp图标），改头像和名字都需要改名卡。<br>登录方式：Steam登录<br>反外挂：扫盘（只扫到CSGO相关外挂才会被封禁，其他游戏外挂不会被封）</p>
-<details>
-<summary>完美官网</summary>
-<iframe src="https://pvp.wanmei.com/" width="100%" height="500" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
-</details>
-
-<h2 id="5E对战平台（国内）"><a href="#5E对战平台（国内）" class="headerlink" title="5E对战平台（国内）"></a><a href="https://arena.5eplay.com/download" target="_blank">5E对战平台（国内）</a></h2><p><img src="/img/5e.png" srcset="/img/loading.gif" lazyload alt="IDM"><br>运营商：杭州赛凡科技有限公司<br>付费：付费免费共存，<br>5E Plus（会员）：5E天梯优先组排，单排<br>受信账户：5E优先单排，优先匹配，特定活动&#x2F;赛事参加资格<br>非受信账户：可以玩天梯组排，单排，普通匹配<br>缺点：有启动广告，第三方网站开箱，通行证等。<br>反外挂：中（扫盘），曾经发生过top1开外挂<br>登录方式：手机号注册</p>
-<details>
-<summary>5E官网</summary>
-<iframe src="https://arena.5eplay.com/download" width="100%" height="500" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
-</details>
-
-
-
 
                 
               </div>
