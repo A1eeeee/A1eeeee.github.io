@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://a1e.top/img/teamspeak3.png">
 <meta property="article:published_time" content="2023-01-27T16:23:15.000Z">
-<meta property="article:modified_time" content="2023-01-29T14:42:22.435Z">
+<meta property="article:modified_time" content="2023-01-29T15:32:46.621Z">
 <meta property="article:author" content="Ale">
 <meta property="article:tag" content="语音软件">
 <meta name="twitter:card" content="summary_large_image">
@@ -262,7 +262,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h1><p class="note note-danger">修改权限保存的时候提醒是保留还是删除，选择x直接关掉，不然详细设置里面的数值全部恢复默认，先设置简易进行保存，然后修改详细设置，修改好直接退出即可。</p>
+                <h1 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h1><p class="note note-danger">修改权限保存的时候提醒是保留还是删除，选择x直接关掉，不然详细设置里面的数值全部恢复默认。一定要先改建议设置保存之后再改详情设置，不然一起保存详细设置很容易恢复默认数值</p>
 1. 首先需要在设置里开启高级权限选项，方便后续设置
 ![](/img/guanli6.png)
 <a class="btn" target="_blank" rel="noopener" href="https://www.teamspeak3.com/teamspeak-3-server-permission-list.php" title="TeamSpeak">TEAMSPEAK 3 权限列表</a>，如有不同想法，可看此文档根据需要进行更改。
@@ -270,7 +270,7 @@
 <h2 id="权限管理思路"><a href="#权限管理思路" class="headerlink" title="权限管理思路"></a>权限管理思路</h2><ol>
 <li>将频道分为三个等级：普通频道、高级频道、私人频道（加入权限等级分别是0、65、75）</li>
 <li>服务组权限分为五个：服主（全部权限）、阿乐（不可加入私人频道的服主）、高级用户（高级频道、普通频道）、正式用户（普通频道、下载文件）、Guest（普通频道）</li>
-<li>频道组权限分为三个：个人频道房主（拥有私人频道内所有权限）、个人频道房管（进入私人频道，移动频道内人物，创建半永久子频道）</li>
+<li>频道组权限分为三个：个人频道房主（拥有私人频道内所有权限）、个人频道房管（进入私人频道，移动频道内人物，创建半永久子频道）,个人频道用户</li>
 </ol>
 <h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><h3 id="图标设置"><a href="#图标设置" class="headerlink" title="图标设置"></a>图标设置</h3><p><img src="/img/guanli2.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="服务器权限"><a href="#服务器权限" class="headerlink" title="服务器权限"></a>服务器权限</h3><p><img src="/img/pindaodengji.jpg" srcset="/img/loading.gif" lazyload><br>创建或者编辑频道可以看到权限一栏默认值都为0，将值修改为想要等数值用于限制。根据需要设置几种不同等级。<br>修改服务器权限等级值，大于或者等级频道值即可拥有此频道对应的权限。</p>
@@ -284,11 +284,11 @@
 <h3 id="频道组权限（此权限仅给拥有私人频道用户，其他用户默认为GUest）"><a href="#频道组权限（此权限仅给拥有私人频道用户，其他用户默认为GUest）" class="headerlink" title="频道组权限（此权限仅给拥有私人频道用户，其他用户默认为GUest）"></a>频道组权限（此权限仅给拥有私人频道用户，其他用户默认为GUest）</h3><p>因为服务器权限很多都和频道组权限重合，所以我将服务器权限用于所有用户，仅拥有频道组权限的人才可以进入私人频道。</p>
 <ol>
 <li>个人频道房主<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/zuzhu1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/zuzhu2.jpg" srcset="/img/loading.gif" lazyload></div></div></div></li>
-<li>个人频道房管<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/zufang1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/zufang2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-<p class="note note-danger">i_channel_subscribe_power（订阅频道权限），将频道组里面Guest的此选项删除，避免与服务器权限冲突</p>
-i_channel_subscribe_power（）</li>
+<li>个人频道房管<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/zufang1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/zufang2.jpg" srcset="/img/loading.gif" lazyload></div></div></div></li>
+<li>个人频道成员<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/chengyuan1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/chengyuan2.jpg" srcset="/img/loading.gif" lazyload></div></div></div></li>
+<li>Guest设置为没有任何权限<p class="note note-danger">i_channel_subscribe_power（订阅频道权限），将频道组里面Guest的此选项删除，避免与服务器权限冲突</p></li>
 </ol>
-<h4 id="Guest设置为没有任何权限"><a href="#Guest设置为没有任何权限" class="headerlink" title="Guest设置为没有任何权限"></a>Guest设置为没有任何权限</h4><h1 id="权限恢复"><a href="#权限恢复" class="headerlink" title="权限恢复"></a>权限恢复</h1><p class="note note-danger">如果是服务器主丢失权限那么只能重新搭建服务器才可以恢复权限</p>
+<h1 id="权限恢复"><a href="#权限恢复" class="headerlink" title="权限恢复"></a>权限恢复</h1><p class="note note-danger">如果是服务器主丢失权限那么只能重新搭建服务器才可以恢复权限</p>
 <p class="note note-danger">权限密钥的创建只能服主创建</p>
 
 <h4 id="方法1：开启自动同步身份信息"><a href="#方法1：开启自动同步身份信息" class="headerlink" title="方法1：开启自动同步身份信息"></a>方法1：开启自动同步身份信息</h4><p>开启身份同步信息就需要登录上号<br>点击上方导航栏工具-&gt;设置-&gt;myteamspeak 进行登录，下方可选择自动同步。<br><img src="/img/quanxian1.jpg" srcset="/img/loading.gif" lazyload></p>
@@ -299,11 +299,14 @@ i_channel_subscribe_power（）</li>
 <p class="note note-danger">手动同步之后一定要试一下当下同步的身份是否正确，别同步成没有任何权限的身份，不然只能重新搭建获取服务器管理权限，安全起见创建权限密钥最稳妥</p>
 
 
-<h4 id="方法2：创建权限密钥"><a href="#方法2：创建权限密钥" class="headerlink" title="方法2：创建权限密钥"></a>方法2：创建权限密钥</h4><ol>
-<li>点击软件上方的权限（M），点击权限密钥<br><img src="/img/ts19.png" srcset="/img/loading.gif" lazyload></li>
-<li>创建服务器密钥类型<br><img src="/img/ts20.png" srcset="/img/loading.gif" lazyload><p class="note note-danger">如果是服主，那么只需要创建服主密钥即可，这个权限最大后续权限可在自行分配</p>
-<p class="note note-danger">多创建几个，每个密钥都是一次性的</p></li>
-</ol>
+<h4 id="方法2：创建权限密钥"><a href="#方法2：创建权限密钥" class="headerlink" title="方法2：创建权限密钥"></a>方法2：创建权限密钥</h4><p class="note note-danger">拥有创建密钥的权限，需要将“分配和删除成员”选项勾选，并选择可创建权限密钥等级</p>
+1. 点击软件上方的权限（M），点击权限密钥
+![](/img/ts19.png)
+2. 创建服务器密钥类型
+![](/img/ts20.png)
+<p class="note note-danger">如果是服主，那么只需要创建服主密钥即可，这个权限最大后续权限可在自行分配</p>
+<p class="note note-danger">多创建几个，每个密钥都是一次性的</p>
+
 <h5 id="密钥使用"><a href="#密钥使用" class="headerlink" title="密钥使用"></a>密钥使用</h5><p>点击上方权限（M）-&gt;使用权限密钥输入即可恢复权限。</p>
 <h5 id="账号密钥"><a href="#账号密钥" class="headerlink" title="账号密钥"></a>账号密钥</h5><p>当我们创建账号登录使用的时候，如果更换电脑登录那么软件需要我们输入账号的密钥，这个密码在创建的时候会提示。<br>如果我们丢失可以在工具-&gt;选项-&gt;myTeamSpeak-&gt;新的恢复密钥来创建新的密钥<br><img src="/img/ts21.png" srcset="/img/loading.gif" lazyload alt="账号1"></p>
 <p class="note note-danger">创建新的密钥之后权限会丢失，请提前备份好权限密钥</p>
