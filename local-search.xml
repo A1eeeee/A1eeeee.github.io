@@ -4,17 +4,23 @@
   
   
   <entry>
-    <title>NFC播放墙</title>
-    <link href="/posts/48ff93eb.html"/>
-    <url>/posts/48ff93eb.html</url>
+    <title>Navidrome（音乐播放服务器）</title>
+    <link href="/posts/navidrome.html"/>
+    <url>/posts/navidrome.html</url>
     
-    <content type="html"><![CDATA[<p>NFC播放音乐墙都是Iphone自动化脚本或者音乐平台外链都有很大局限性。尝试搭建一款局域网内音乐播放服务器。目前思路 软路由Docker安装Navidrome，进行实现，先立项等后面实现更新</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="安装Navidrome（Docker版）"><a href="#安装Navidrome（Docker版）" class="headerlink" title="安装Navidrome（Docker版）"></a>安装Navidrome（Docker版）</h1><p>首先安装<a href="https://www.docker.com/" target="_blank">Docker&lt;&#x2F;a，之后Win+S 输入PowerShell输入</p><div class="code-wrapper"><pre><code class="hljs arcade">docker run -d  --name navidrome  --restart=unless-stopped  --user $(id -u):$(id -g) -v A:<span class="hljs-regexp">/Music:/mu</span>sic  -v A:<span class="hljs-regexp">/navidrom/</span>data:<span class="hljs-regexp">/data  -p 4533:4533  -e ND_LOGLEVEL=info  deluan/</span>navidrome:latest</code></pre></div><p>至此navidrome安装完成：</p><p class="note note-danger">-v A:/Music:/music(存音乐的文件夹)-v A:/navidrom/data:/data（存配置文件夹） 改成自己的地址 </p><p>访问地址为：本地ip+端口（我的是192.168.50.188：4533）输入即可播放本地存储音乐</p><p class="note note-danger">对Docker不是很了解，仅仅达到了能运行的地步，仅作记录后续详细了解在进行更新</p>]]></content>
     
+    
+    <categories>
+      
+      <category>软件</category>
+      
+    </categories>
     
     
     <tags>
       
-      <tag>NFC</tag>
+      <tag>音乐播放</tag>
       
     </tags>
     

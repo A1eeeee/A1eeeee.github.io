@@ -18,22 +18,24 @@
   <meta name="author" content="Ale">
   <meta name="keywords" content="">
   
-    <meta name="description" content="NFC播放音乐墙都是Iphone自动化脚本或者音乐平台外链都有很大局限性。尝试搭建一款局域网内音乐播放服务器。目前思路 软路由Docker安装Navidrome，进行实现，先立项等后面实现更新">
+    <meta name="description" content="创建本地局域网在线音乐播放器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NFC播放墙">
-<meta property="og:url" content="https://a1e.top/posts/48ff93eb.html">
+<meta property="og:title" content="Navidrome（音乐播放服务器）">
+<meta property="og:url" content="https://a1e.top/posts/navidrome.html">
 <meta property="og:site_name" content="Ale">
-<meta property="og:description" content="NFC播放音乐墙都是Iphone自动化脚本或者音乐平台外链都有很大局限性。尝试搭建一款局域网内音乐播放服务器。目前思路 软路由Docker安装Navidrome，进行实现，先立项等后面实现更新">
+<meta property="og:description" content="创建本地局域网在线音乐播放器">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a1e.top/img/navidrome.png">
 <meta property="article:published_time" content="2023-02-03T12:08:12.000Z">
-<meta property="article:modified_time" content="2023-02-03T12:10:53.513Z">
+<meta property="article:modified_time" content="2023-02-03T21:21:17.476Z">
 <meta property="article:author" content="Ale">
-<meta property="article:tag" content="NFC">
+<meta property="article:tag" content="音乐播放">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a1e.top/img/navidrome.png">
   
   
   
-  <title>NFC播放墙 - Ale</title>
+  <title>Navidrome（音乐播放服务器） - Ale</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -180,13 +182,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/navidrome.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">NFC播放墙</span>
+            <span id="subtitle">Navidrome（音乐播放服务器）</span>
           
         </div>
 
@@ -255,13 +257,20 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">NFC播放墙</h1>
+            <h1 style="display: none">Navidrome（音乐播放服务器）</h1>
             
             
               <div class="markdown-body">
                 
-                <p>NFC播放音乐墙都是Iphone自动化脚本或者音乐平台外链都有很大局限性。尝试搭建一款局域网内音乐播放服务器。目前思路 软路由Docker安装Navidrome，进行实现，先立项等后面实现更新</p>
+                <h1 id="安装Navidrome（Docker版）"><a href="#安装Navidrome（Docker版）" class="headerlink" title="安装Navidrome（Docker版）"></a>安装Navidrome（Docker版）</h1><p>首先安装<a href="https://www.docker.com/" target="_blank">Docker&lt;&#x2F;a，之后Win+S 输入PowerShell输入</p>
+<div class="code-wrapper"><pre><code class="hljs arcade">docker run -d  --name navidrome  --restart=unless-stopped  --user $(id -u):$(id -g) -v A:<span class="hljs-regexp">/Music:/mu</span>sic  -v A:<span class="hljs-regexp">/navidrom/</span>data:<span class="hljs-regexp">/data  -p 4533:4533  -e ND_LOGLEVEL=info  deluan/</span>navidrome:latest</code></pre></div>
 
+<p>至此navidrome安装完成：</p>
+<p class="note note-danger">-v A:/Music:/music(存音乐的文件夹)-v A:/navidrom/data:/data（存配置文件夹） 改成自己的地址 </p>
+
+
+<p>访问地址为：本地ip+端口（我的是192.168.50.188：4533）输入即可播放本地存储音乐</p>
+<p class="note note-danger">对Docker不是很了解，仅仅达到了能运行的地步，仅作记录后续详细了解在进行更新</p>
                 
               </div>
             
@@ -269,11 +278,32 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="category-chain-item">软件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/NFC/">#NFC</a>
+        <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE/">#音乐播放</a>
       
     </div>
   
@@ -285,8 +315,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>NFC播放墙</div>
-      <div>https://a1e.top/posts/48ff93eb.html</div>
+      <div>Navidrome（音乐播放服务器）</div>
+      <div>https://a1e.top/posts/navidrome.html</div>
     </div>
     <div class="license-meta">
       
