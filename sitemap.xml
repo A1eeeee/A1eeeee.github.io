@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://a1e.top/posts/ts3server.html</loc>
+    <loc>https://a1e.top/posts/csgosetting.html</loc>
     
     <lastmod>2023-06-15</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://a1e.top/posts/teamspeak3.html</loc>
+    <loc>https://a1e.top/posts/Steambeautify.html</loc>
     
     <lastmod>2023-06-15</lastmod>
     
@@ -29,7 +29,16 @@
   </url>
   
   <url>
-    <loc>https://a1e.top/posts/csgosetting.html</loc>
+    <loc>https://a1e.top/posts/teamspeak3.html</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://a1e.top/posts/ts3server.html</loc>
     
     <lastmod>2023-06-15</lastmod>
     
@@ -41,15 +50,6 @@
     <loc>https://a1e.top/posts/Docker.html</loc>
     
     <lastmod>2023-06-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://a1e.top/posts/Steambeautify.html</loc>
-    
-    <lastmod>2023-03-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
