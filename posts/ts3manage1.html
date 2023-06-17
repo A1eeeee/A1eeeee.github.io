@@ -20,14 +20,14 @@
   
     <meta name="description" content="TS服务器权限设置及使用，以及更换电脑设置权限的恢复">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TeamSpeak3权限及管理">
-<meta property="og:url" content="https://a1e.top/posts/ts3manage.html">
+<meta property="og:title" content="TeamSpeak3权限管理">
+<meta property="og:url" content="https://a1e.top/posts/ts3manage1.html">
 <meta property="og:site_name" content="Ale">
 <meta property="og:description" content="TS服务器权限设置及使用，以及更换电脑设置权限的恢复">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://a1e.top/img/ts3manag.png">
-<meta property="article:published_time" content="2023-01-27T16:23:15.000Z">
-<meta property="article:modified_time" content="2023-06-15T20:25:58.147Z">
+<meta property="article:published_time" content="2023-06-17T14:16:17.000Z">
+<meta property="article:modified_time" content="2023-06-17T14:50:18.539Z">
 <meta property="article:author" content="Ale">
 <meta property="article:tag" content="设置">
 <meta property="article:tag" content="Teamspeak">
@@ -36,7 +36,7 @@
   
   
   
-  <title>TeamSpeak3权限及管理 - Ale</title>
+  <title>TeamSpeak3权限管理 - Ale</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">TeamSpeak3权限及管理</span>
+            <span id="subtitle">TeamSpeak3权限管理</span>
           
         </div>
 
@@ -205,8 +205,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-28 00:23" pubdate>
-          星期六, 一月 28日 2023, 12:23 凌晨
+        <time datetime="2023-06-17 22:16" pubdate>
+          星期六, 六月 17日 2023, 10:16 晚上
         </time>
       </span>
     
@@ -258,46 +258,26 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">TeamSpeak3权限及管理</h1>
+            <h1 style="display: none">TeamSpeak3权限管理</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="权限图标设置"><a href="#权限图标设置" class="headerlink" title="权限图标设置"></a>权限图标设置</h1><p><a class="btn" target="_blank" rel="noopener" href="https://tsicons.com/" title="tsicons">TEAMSPEAK 3 图标</a><br>点击权限（M），在设置右上角点击图标，将下载好的文件解压上床即可使用。<br><img src="/img/tubiao.jpg" srcset="/img/loading.gif" lazyload></p>
-<h1 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h1><p class="note note-danger">修改权限保存的时候提醒是保留还是删除，选择x直接关掉，不然详细设置里面的数值全部恢复默认。一定要先改简易设置保存之后再改详情设置，不然一起保存详细设置很容易恢复默认数值</p>
-1. 首先需要在设置里开启高级权限选项，方便后续设置
-![](/img/guanli6.png)
-<a class="btn" target="_blank" rel="noopener" href="https://www.teamspeak3.com/teamspeak-3-server-permission-list.php" title="TeamSpeak">TEAMSPEAK 3 权限列表</a>，如有不同想法，可看此文档根据需要进行更改。
+                <h1 id="权限图标设置"><a href="#权限图标设置" class="headerlink" title="权限图标设置"></a>权限图标设置</h1><p><a class="btn" target="_blank" rel="noopener" href="https://tsicons.com/" title="tsicons">TEAMSPEAK 3 图标</a><br>点击权限（M），在设置右上角点击图标，将下载好的文件解压上传即可使用。<br><img src="/img/tubiao.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h1><p>首先需要在设置里开启高级权限选项，方便后续设置<br><img src="/img/guanli6.png" srcset="/img/loading.gif" lazyload><br><a class="btn" target="_blank" rel="noopener" href="https://www.teamspeak3.com/teamspeak-3-server-permission-list.php" title="TeamSpeak">TEAMSPEAK 3 权限列表</a>，如有不同想法，可看此文档根据需要进行更改。</p>
+<p class="note note-danger">修改权限一定要先修改完精简页面里的权限之后再打开高级权限页面进行修改，如果先更改高级权限再去修改精简页面权限，那么高级页面里面的部分设置会被重置</p>
 
-<h2 id="权限管理思路"><a href="#权限管理思路" class="headerlink" title="权限管理思路"></a>权限管理思路</h2><p><img src="/img/quanxiansilu.jpg" srcset="/img/loading.gif" lazyload></p>
-<p class="note note-danger">红色是将频道可加入人数设置为0</p>
-1. 将频道分为三个等级：普通频道、高级频道、私人频道（加入权限等级分别是0、65、75）
-2. 服务组权限分为五个：服主（全部权限）、阿乐（不可加入私人频道的服主）、高级用户（高级频道、普通频道）、正式用户（普通频道、下载文件）、Guest（普通频道）
-3. 频道组权限分为三个：个人频道房主（拥有私人频道内所有权限）、个人频道房管（进入私人频道，移动频道内人物，创建半永久子频道）,个人频道用户
+<h2 id="设置权限分组"><a href="#设置权限分组" class="headerlink" title="设置权限分组"></a>设置权限分组</h2><p><img src="/img/quanxianfenzu.jpg" srcset="/img/loading.gif" lazyload></p>
+<h3 id="服务器权限："><a href="#服务器权限：" class="headerlink" title="服务器权限："></a>服务器权限：</h3><p>默认用户：高级频道标识： 订阅等级  0  加入等级 0  删除频道等级：0<br>正式用户：高级频道标识： 订阅等级  0  加入等级 0  删除频道等级：0<br>高级频道标识： 订阅等级 ：10  加入等级 10  删除频道等级：0<br>私人频道标识： 订阅等级 ：60  加入等级 60  删除频道等级：60<br>最高权限：订阅等级 ：75 加入等级75  删除频道等级：75、<br>（子频道频道权限默认自动继承在夫频道的权限）</p>
+<h3 id="频道组权限"><a href="#频道组权限" class="headerlink" title="频道组权限"></a>频道组权限</h3><p>频道房主：订阅等级 60  加入等级 60 删除频道等级：60<br>频道房管：订阅等级 40  加入等级 40 删除频道等级：40<br>频道成员：订阅等级 20  加入等级 20  删除频道等级：20</p>
+<h3 id="频道设置条件"><a href="#频道设置条件" class="headerlink" title="频道设置条件"></a>频道设置条件</h3><p><img src="/img/pindaodengji.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>普通频道 ：订阅等级  0  加入等级 0  删除频道等级：75<br>普通子频道： 订阅等级  0  加入等级 0  删除频道等级：75</p>
+<p>高级频道： 订阅等级  10  加入等级 10  删除频道等级：75<br>高级子频道： 订阅等级  10  加入等级 10  删除频道等级：75</p>
+<p>私人频道：订阅等级 60  加入等级 60  删除频道等级：60<br>私人子频道：订阅等级 20  加入等级 20（如果有多个子频道，也可以设置）  删除频道等级：60 （60代表只有频道房主可以删除此频道）<br>私人子子频道：订阅等级  20 加入等级 20  删除频道等级：40  （40代表管理员可以删除此频道）<br>私人子***子： 订阅等级 20 加入等级 20  删除频道等级：40<br>（密码版本将加入等级改为0）</p>
+<h3 id="设置权限对应等级"><a href="#设置权限对应等级" class="headerlink" title="设置权限对应等级"></a>设置权限对应等级</h3><p>设置删除权限等级：<br>进入高级权限-&gt;Channel-&gt;Delete，将i_channel_delete_power 更改为对应等级<br>修改加入和订阅权限：<br>进入高级权限-&gt;Channel-&gt;Access<br>b_channel_join_permanent	加入永久频道等级<br>b_channel_join_semi_permanent	加入半永久频道等级<br>b_channel_join_temporary  加入半临时频道等级<br>b_virtualserver_join_ignore_password  加入虚拟服务器忽略其密码（填写对应等级 如果勾选虽然提示密码但是直接点确定可以直接进入不勾选就需要输入密码才可以进入）<br>b_channel_join_ignore_maxclients  忽略通道最大客户端限制 （勾选无视频道最大人数 不勾选无法进入满人房间）<br>i_channel_join_power    频道加入等级<br>i_channel_needed_join_power	所需频道加入等级<br>i_channel_subscribe_power	频道订阅等级<br>i_channel_needed_subscribe_power	所需的频道订阅等级<br>i_channel_description_view_power	查看频道描述等级<br>i_channel_needed_description_view_power 查看所需频道描述等级</p>
+<p class="note note-danger">如何Access里面没有这些参数，鼠标放到access上右键点击Add Permission Group就有了</p>
 
-<h2 id="服务器权限"><a href="#服务器权限" class="headerlink" title="服务器权限"></a>服务器权限</h2><p><img src="/img/pindaodengji.jpg" srcset="/img/loading.gif" lazyload><br>创建或者编辑频道可以看到权限一栏默认值都为0，将值修改为想要等数值用于限制。根据需要设置几种不同等级。<br>修改服务器权限等级值，大于或者等级频道值即可拥有此频道对应的权限。</p>
-<p class="note note-danger">如果没有Access选项，到简易页面将基本、用户头像勾选保存，提示选择移除，再次打开就有了</p>
-1. 服主不需要改变
-2. 阿乐（随意设置名称，仅是自己用，同时留给私人频道用户隐私，可能随意进入私人频道）
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/ale1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/ale2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-3. 高级用户
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/gaoji1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/gaoji2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-4. 正式用户
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/zhengshi1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/zhengshi2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-5. Guest（默认用户）
-  ![](/img/yonghu.jpg)
-## 频道组权限（此权限仅给拥有私人频道用户，其他用户默认为GUest）
-因为服务器权限很多都和频道组权限重合，所以我将服务器权限用于所有用户，仅拥有频道组权限的人才可以进入私人频道。
-1. 个人频道房主
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/zuzhu1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/zuzhu2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-2. 个人频道房管
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/zufang1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/zufang2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-3. 个人频道成员
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/chengyuan1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/chengyuan2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-4. Guest设置为没有任何权限
-<p class="note note-danger">i_channel_subscribe_power（订阅频道权限），将频道组里面Guest的此选项删除，避免与服务器权限冲突</p>
-
-
+<p><img src="/img/quanxian.jpg" srcset="/img/loading.gif" lazyload></p>
 <h1 id="权限恢复"><a href="#权限恢复" class="headerlink" title="权限恢复"></a>权限恢复</h1><p class="note note-danger">如果是服务器主丢失权限那么只能重新搭建服务器才可以恢复权限</p>
 
 <h2 id="方法1：开启自动同步身份信息"><a href="#方法1：开启自动同步身份信息" class="headerlink" title="方法1：开启自动同步身份信息"></a>方法1：开启自动同步身份信息</h2><p>开启身份同步信息就需要登录上号<br>点击上方导航栏工具-&gt;设置-&gt;myteamspeak 进行登录，下方可选择自动同步。<br><img src="/img/quanxian1.jpg" srcset="/img/loading.gif" lazyload></p>
@@ -365,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>TeamSpeak3权限及管理</div>
-      <div>https://a1e.top/posts/ts3manage.html</div>
+      <div>TeamSpeak3权限管理</div>
+      <div>https://a1e.top/posts/ts3manage1.html</div>
     </div>
     <div class="license-meta">
       
@@ -378,7 +358,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月28日</div>
+          <div>2023年6月17日</div>
         </div>
       
       
@@ -410,18 +390,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/Steambeautify.html" title="Steam展柜">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Steam展柜</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/csgosetting.html" title="CSGO">
-                        <span class="hidden-mobile">CSGO</span>
+                      <a href="/posts/ts3server.html" title="TeamSpeak服务器">
+                        <span class="hidden-mobile">TeamSpeak服务器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
