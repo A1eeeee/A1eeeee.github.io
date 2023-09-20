@@ -4,11 +4,146 @@
   
   
   <entry>
-    <title>TeamSpeak3权限管理</title>
-    <link href="/posts/ts3manage1.html"/>
-    <url>/posts/ts3manage1.html</url>
+    <title>mumble-server</title>
+    <link href="/posts/mumble-server.html"/>
+    <url>/posts/mumble-server.html</url>
     
-    <content type="html"><![CDATA[<h1 id="权限图标设置"><a href="#权限图标设置" class="headerlink" title="权限图标设置"></a>权限图标设置</h1><p><a class="btn" href="https://tsicons.com/" title="tsicons">TEAMSPEAK 3 图标</a><br>点击权限（M），在设置右上角点击图标，将下载好的文件解压上传即可使用。<br><img src="/img/tubiao.jpg"></p><h1 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h1><p>首先需要在设置里开启高级权限选项，方便后续设置<br><img src="/img/guanli6.png"><br><a class="btn" href="https://www.teamspeak3.com/teamspeak-3-server-permission-list.php" title="TeamSpeak">TEAMSPEAK 3 权限列表</a>，如有不同想法，可看此文档根据需要进行更改。</p><p class="note note-danger">修改权限一定要先修改完精简页面里的权限之后再打开高级权限页面进行修改，如果先更改高级权限再去修改精简页面权限，那么高级页面里面的部分设置会被重置</p><h2 id="设置权限分组"><a href="#设置权限分组" class="headerlink" title="设置权限分组"></a>设置权限分组</h2><p><img src="/img/quanxianfenzu.jpg"></p><h3 id="服务器权限："><a href="#服务器权限：" class="headerlink" title="服务器权限："></a>服务器权限：</h3><p>默认用户：高级频道标识： 订阅等级  0  加入等级 0  删除频道等级：0<br>正式用户：高级频道标识： 订阅等级  0  加入等级 0  删除频道等级：0<br>高级频道标识： 订阅等级 ：10  加入等级 10  删除频道等级：0<br>服务器房管： 订阅等级 ：60  加入等级 60  删除频道等级：60<br>最高权限：订阅等级 ：75 加入等级75  删除频道等级：75<br>（子频道频道权限默认自动继承在父频道的权限）</p><h3 id="频道组权限"><a href="#频道组权限" class="headerlink" title="频道组权限"></a>频道组权限</h3><p>频道房主：订阅等级 60  加入等级 60 删除频道等级：60<br>频道房管：订阅等级 40  加入等级 40 删除频道等级：40<br>频道成员：订阅等级 20  加入等级 20  删除频道等级：20</p><h3 id="频道设置条件"><a href="#频道设置条件" class="headerlink" title="频道设置条件"></a>频道设置条件</h3><p><img src="/img/pindaodengji.jpg"></p><p>普通频道 ：订阅等级  0  加入等级 0  删除频道等级：75<br>普通子频道： 订阅等级  0  加入等级 0  删除频道等级：75</p><p>高级频道： 订阅等级  10  加入等级 10  删除频道等级：75<br>高级子频道： 订阅等级  10  加入等级 10  删除频道等级：75</p><p>私人频道：订阅等级 60  加入等级 60  删除频道等级：60<br>私人子频道：订阅等级 20  加入等级 20（如果有多个子频道，也可以设置）  删除频道等级：60 （60代表只有频道房主可以删除此频道）<br>私人子子频道：订阅等级  20 加入等级 20  删除频道等级：40  （40代表管理员可以删除此频道）<br>私人子***子： 订阅等级 20 加入等级 20  删除频道等级：40<br>（密码版本将加入等级改为0）</p><h3 id="设置权限对应等级"><a href="#设置权限对应等级" class="headerlink" title="设置权限对应等级"></a>设置权限对应等级</h3><p>设置删除权限等级：<br>进入高级权限-&gt;Channel-&gt;Delete，将i_channel_delete_power 更改为对应等级<br>修改加入和订阅权限：<br>进入高级权限-&gt;Channel-&gt;Access<br>b_channel_join_permanent加入永久频道等级<br>b_channel_join_semi_permanent加入半永久频道等级<br>b_channel_join_temporary  加入半临时频道等级<br>b_virtualserver_join_ignore_password  加入虚拟服务器忽略其密码（填写对应等级 如果勾选虽然提示密码但是直接点确定可以直接进入不勾选就需要输入密码才可以进入）<br>b_channel_join_ignore_maxclients  忽略通道最大客户端限制 （勾选无视频道最大人数 不勾选无法进入满人房间）<br>i_channel_join_power    频道加入等级<br>i_channel_needed_join_power所需频道加入等级<br>i_channel_subscribe_power频道订阅等级<br>i_channel_needed_subscribe_power所需的频道订阅等级<br>i_channel_description_view_power查看频道描述等级<br>i_channel_needed_description_view_power 查看所需频道描述等级</p><p class="note note-danger">如何Access里面没有这些参数，鼠标放到access上右键点击Add Permission Group就有了</p><p><img src="/img/quanxian.jpg"></p><h1 id="权限恢复"><a href="#权限恢复" class="headerlink" title="权限恢复"></a>权限恢复</h1><p class="note note-danger">如果是服务器主丢失权限那么只能重新搭建服务器才可以恢复权限</p><h2 id="方法1：开启自动同步身份信息"><a href="#方法1：开启自动同步身份信息" class="headerlink" title="方法1：开启自动同步身份信息"></a>方法1：开启自动同步身份信息</h2><p>开启身份同步信息就需要登录上号<br>点击上方导航栏工具-&gt;设置-&gt;myteamspeak 进行登录，下方可选择自动同步。<br><img src="/img/quanxian1.jpg"></p><p class="note note-danger">网络环境不好的时候可能同步不上</p><h2 id="方法2：手动同步"><a href="#方法2：手动同步" class="headerlink" title="方法2：手动同步"></a>方法2：手动同步</h2><p>点击上方导航栏工具-&gt;身份，此时能看到本地身份有一个选项，右键点击导出一个.ini文件，更换电脑时在将此文件导入并设置为默认选项即可。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/quanxian2.jpg"></div><div class="group-image-wrap"><img src="/img/quanxian3.jpg"></div></div></div><p class="note note-danger">手动同步之后一定要试一下当下同步的身份是否正确，别同步成没有任何权限的身份，不然只能重新搭建获取服务器管理权限，安全起见创建权限密钥最稳妥</p><h2 id="方法3：创建权限密钥"><a href="#方法3：创建权限密钥" class="headerlink" title="方法3：创建权限密钥"></a>方法3：创建权限密钥</h2><p class="note note-danger">拥有创建密钥的权限，需要将“分配和删除成员”选项勾选，并选择可创建权限密钥等级，密钥使用过后就会失效，建议多创建几个。防止丢失</p><ol><li>点击软件上方的权限（M），点击权限密钥</li></ol><p><img src="/img/ts19.png"><br>2. 创建服务器密钥类型</p><p><img src="/img/ts20.png"></p><h3 id="密钥使用"><a href="#密钥使用" class="headerlink" title="密钥使用"></a>密钥使用</h3><p>点击上方权限（M）-&gt;使用权限密钥输入即可恢复权限。</p><h1 id="账号密钥"><a href="#账号密钥" class="headerlink" title="账号密钥"></a>账号密钥</h1><p>当我们创建账号登录使用的时候，如果更换电脑登录那么软件需要我们输入账号的密钥，这个密码在创建的时候会提示。<br>如果我们丢失可以在工具-&gt;选项-&gt;myTeamSpeak-&gt;新的恢复密钥来创建新的密钥<br><img src="/img/ts21.png" alt="账号1"></p><p class="note note-danger">创建新的密钥之后权限会丢失，请提前备份好权限密钥</p>]]></content>
+    <content type="html"><![CDATA[<div class="code-wrapper"><pre><code class="hljs axapta"><span class="hljs-meta">#创建用户 </span>adduser mumble<span class="hljs-meta">#添加sudo权限（需要切换到root用户）</span>sudo adduser mumble sudo切换到mumble用户su -mumble<span class="hljs-meta">#安装</span>sudo apt install mumble-<span class="hljs-keyword">server</span><span class="hljs-meta">#启动</span>sudo dpkg-reconfigure mumble-<span class="hljs-keyword">server</span><span class="hljs-meta">#配置文件</span>sudo vi /etc/mumble-<span class="hljs-keyword">server</span>.ini<span class="hljs-meta">#设置完重启配置文件 </span>service mumble-<span class="hljs-keyword">server</span> restart重启配置文件<span class="hljs-meta">#设置自启动</span>sudo systemctl enable mumble-<span class="hljs-keyword">server</span><span class="hljs-meta">#开启端口65738</span>sudo ufw allow <span class="hljs-number">65738</span></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>部署Linux服务</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Mumble</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Minecraft-server</title>
+    <link href="/posts/Minecraft-server.html"/>
+    <url>/posts/Minecraft-server.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-comment">#下载Minecraft服务器压缩包</span>wget -O minecraft_server.jar https:<span class="hljs-regexp">//</span>piston-data.mojang.com<span class="hljs-regexp">/v1/</span>objects<span class="hljs-regexp">/84194a2f286ef7c14ed7ce0090dba59902951553/</span>server.jarsudo apt install openjdk-<span class="hljs-number">17</span>-jdkjava -Xmx1024M -Xms1024M -jar server.jarvi eula.txt将false改为true<span class="hljs-comment">#启动服务</span>java -Xmx500M -Xms500M -jar server.jar<span class="hljs-comment">#开启端口</span>sudo ufw allow <span class="hljs-number">25565</span></code></pre></div><h2 id="基岩版"><a href="#基岩版" class="headerlink" title="基岩版"></a>基岩版</h2><div class="code-wrapper"><pre><code class="hljs axapta"><span class="hljs-meta">#下载Minecraft服务器压缩包</span>curl -o <span class="hljs-keyword">server</span>.zip https:<span class="hljs-comment">//minecraft.azureedge.net/bin-linux/bedrock-server-1.20.13.01.zip</span><span class="hljs-meta">#解压 文件（需要安装解压软件zip）</span>unzip <span class="hljs-keyword">server</span>.zip<span class="hljs-meta">#修改配置，是非正版玩家可以游玩</span>vi <span class="hljs-keyword">server</span>.propertiesonline_mode = <span class="hljs-literal">false</span><span class="hljs-meta">#开启端口</span>sudo ufw allow <span class="hljs-number">19132</span> </code></pre></div><h3 id="让服务器长期运行"><a href="#让服务器长期运行" class="headerlink" title="让服务器长期运行"></a>让服务器长期运行</h3><h4 id="安装screen"><a href="#安装screen" class="headerlink" title="安装screen"></a>安装screen</h4><div class="code-wrapper"><pre><code class="hljs routeros"><span class="hljs-comment">#安装</span>sudo apt install<span class="hljs-built_in"> screen</span><span class="hljs-built_in"></span><span class="hljs-comment"># 创建一个窗口</span><span class="hljs-built_in"></span><span class="hljs-built_in">screen </span>-S mc<span class="hljs-comment"># 启动MC服务</span><span class="hljs-attribute">LD_LIBRARY_PATH</span>=. ./bedrock_server</code></pre></div><h4 id="screen指令"><a href="#screen指令" class="headerlink" title="screen指令"></a>screen指令</h4><div class="code-wrapper"><pre><code class="hljs gauss"><span class="hljs-keyword">screen</span> -ls （列出当前终端数目）<span class="hljs-keyword">screen</span> -r xx （进入xx终端中）<span class="hljs-keyword">screen</span> -wipe xx （删除xx终端）</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>部署Linux服务</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Mincraft</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>smb</title>
+    <link href="/posts/smb.html"/>
+    <url>/posts/smb.html</url>
+    
+    <content type="html"><![CDATA[<ol><li>安装smb</li></ol><div class="code-wrapper"><pre><code class="hljs cmake">sudo apt <span class="hljs-keyword">install</span> samba</code></pre></div><ol start="2"><li>设置特定用户访问</li></ol><div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-comment">#设置用户名</span>sudo touch <span class="hljs-regexp">/etc/</span>samba/用户名称<span class="hljs-comment">#设置密码</span>sudo smbpasswd -a 密码</code></pre></div><ol start="3"><li>修改配置文件</li></ol><div class="code-wrapper"><pre><code class="hljs crmsh"><span class="hljs-comment">#进入配置文件</span>sudo vim /etc/samba/smb.conf<span class="hljs-comment"># 最后添加以下内容</span>[share]comment = 填写介绍内容path = 填写文件路径writable = yesvalid <span class="hljs-keyword">user</span> <span class="hljs-title">= 天锡克smb</span>用户名</code></pre></div><ol start="4"><li>端口</li></ol><div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-comment">#开放445端口</span><span class="hljs-attribute">ufw</span> <span class="hljs-literal">allow</span> <span class="hljs-number">445</span></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>部署Linux服务</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>smb</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ubuntu</title>
+    <link href="/posts/ubuntu.html"/>
+    <url>/posts/ubuntu.html</url>
+    
+    <content type="html"><![CDATA[<h3 id="ubuntu-指令"><a href="#ubuntu-指令" class="headerlink" title="ubuntu 指令"></a>ubuntu 指令</h3><div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment">#更新apt</span>sudo apt updatesudo apt upgrade<span class="hljs-comment">#给用户添加sudo权限</span>sudo adduser xx sudo<span class="hljs-comment">#关机</span>poweroff<span class="hljs-comment">#重启</span>reboot<span class="hljs-comment">#显示当前路径</span>-<span class="hljs-built_in">pwd</span><span class="hljs-comment">#显示党建文件</span>-<span class="hljs-built_in">ls</span><span class="hljs-comment">#进入文件</span><span class="hljs-built_in">cd</span> <span class="hljs-comment">#创建文件夹</span><span class="hljs-built_in">mkdir</span>   <span class="hljs-comment">#删除文件夹      </span><span class="hljs-built_in">rm</span> <span class="hljs-comment">#卸载软件</span>apt autoremove xxxx<span class="hljs-comment">#更改文件夹权限</span><span class="hljs-built_in">chmod</span> 777 /文件夹目录 </code></pre></div><h3 id="远程控制root用户"><a href="#远程控制root用户" class="headerlink" title="远程控制root用户"></a>远程控制root用户</h3><div class="code-wrapper"><pre><code class="hljs awk">sudo nano <span class="hljs-regexp">/etc/</span>ssh/sshd_config</code></pre></div><p>将 #PermitRootLogin prohibit-password改成 PermitRootLogin yes </p><p>ctrl+x  保存并退出</p><h3 id="安装UFW"><a href="#安装UFW" class="headerlink" title="安装UFW"></a>安装UFW</h3><div class="code-wrapper"><pre><code class="hljs routeros"><span class="hljs-comment">#安装</span>sudo apt install ufw<span class="hljs-comment">#设置跟随系统启动</span>sudo ufw <span class="hljs-built_in">enable</span>sudo ufw<span class="hljs-built_in"> default </span>deny<span class="hljs-comment">#检查ufw状态</span>sudo ufw status numbered</code></pre></div><h3 id="挂载硬盘"><a href="#挂载硬盘" class="headerlink" title="挂载硬盘"></a>挂载硬盘</h3><ol><li>查询添加的磁盘,找到所需磁盘</li></ol><div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo fdisk -l</span></code></pre></div><ol start="2"><li>新建一个文件夹</li></ol><div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment">#创建文件夹</span><span class="hljs-built_in">mkdir</span> /data</code></pre></div><ol start="3"><li>设置开机自动挂载</li></ol><div class="code-wrapper"><pre><code class="hljs gradle">sudo vim <span class="hljs-regexp">/etc/</span>fstab#在最后面输入此代码 <span class="hljs-regexp">/dev/</span>sda1是新磁盘路径请自行更改<span class="hljs-regexp">/dev/</span>sda1   /data   ext4     defaults     <span class="hljs-number">0</span>   <span class="hljs-number">0</span></code></pre></div><ol start="4"><li>生效</li></ol><div class="code-wrapper"><pre><code class="hljs css">sudo mount -<span class="hljs-selector-tag">a</span></code></pre></div><p class="note note-danger">原文章：https://zhuanlan.zhihu.com/p/469509747</p><h3 id="ubuntu常用软件"><a href="#ubuntu常用软件" class="headerlink" title="ubuntu常用软件"></a>ubuntu常用软件</h3><div class="code-wrapper"><pre><code class="hljs mipsasm"><span class="hljs-comment">#zip解压软件</span>sudo apt <span class="hljs-keyword">instamm </span>zip </code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>linux</tag>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>TeamSpeak服务器(Linux版)</title>
+    <link href="/posts/99a4dc0c.html"/>
+    <url>/posts/99a4dc0c.html</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>创建用户并切换用户</p><div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">adduser teamspeak</span><span class="hljs-attribute">su - teamspeak</span></code></pre></div></li><li><p>下载ts服务器文件<br>方法一<br>wget 文件地址</p></li></ol><p>方法二<br>将下载好的服务器文件使用termius上传到teamspeak用户文件夹中</p><ol start="3"><li>创建文件并进入<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> teamspeak3<span class="hljs-built_in">cd</span> teamspeak3</code></pre></div></li><li>解压下载好的文件</li></ol><div class="code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span> -xvf 文件名</code></pre></div><ol start="5"><li><p>删除ts压缩包<br>rm -rf teamspeak3-server_linux_amd64</p></li><li><p>同意许可证并启动服务</p></li></ol><div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment">#接受协议</span><span class="hljs-built_in">touch</span> .ts3server_license_accepted<span class="hljs-comment">#启动服务器：</span>./ts3server_startscript.sh start</code></pre></div><ol start="7"><li><p>开放端口</p><div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-comment">#音频端口</span><span class="hljs-attribute">sudo</span> ufw <span class="hljs-literal">allow</span> <span class="hljs-number">9987</span><span class="hljs-comment">#文件夹端口</span><span class="hljs-attribute">sudo</span> ufw <span class="hljs-literal">allow</span> <span class="hljs-number">30033</span>/tcp</code></pre></div></li><li><p>自启动</p></li></ol><div class="code-wrapper"><pre><code class="hljs nsis"><span class="hljs-comment">#重新加载 systemd</span><span class="hljs-params">system</span>ctl daemon-reload<span class="hljs-comment">#开启自启动(可选)</span><span class="hljs-params">system</span>ctl enable teamspeak.service<span class="hljs-comment">#启动 TeamSpeak</span><span class="hljs-params">system</span>ctl start teamspeak.service<span class="hljs-comment">#停止 TeamSpeak</span><span class="hljs-params">system</span>ctl stop teamspeak.service<span class="hljs-comment">#重启 TeamSpeak</span><span class="hljs-params">system</span>ctl restart teamspeak.service</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>部署Linux服务</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>服务器</tag>
+      
+      <tag>Teamspeak3</tag>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Windwos APP</title>
+    <link href="/posts/windwosapp.html"/>
+    <url>/posts/windwosapp.html</url>
+    
+    <content type="html"><![CDATA[<h3 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h3><p><a href="https://code.visualstudio.com/" target="_blank">VSCode</a>：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p><h3 id="解压工具"><a href="#解压工具" class="headerlink" title="解压工具"></a>解压工具</h3><p><a href="https://www.7-zip.org/" target="_blank">7zip</a>：<a href="https://www.7-zip.org/">https://www.7-zip.org/</a></p><h3 id="下载器"><a href="#下载器" class="headerlink" title="下载器"></a>下载器</h3><p><a href="https://www.internetdownloadmanager.com/" target="_blank">IDM</a>：<a href="https://www.internetdownloadmanager.com/">https://www.internetdownloadmanager.com/</a></p><h3 id="本地播放器"><a href="#本地播放器" class="headerlink" title="本地播放器"></a>本地播放器</h3><p><a href="https://www.videolan.org/vlc/" target="_blank">VCL</a>：<a href="https://www.videolan.org/vlc/">https://www.videolan.org/vlc/</a></p><h3 id="卸载工具"><a href="#卸载工具" class="headerlink" title="卸载工具"></a>卸载工具</h3><p><a href="https://geekuninstaller.com" target="_blank">Geek</a>：<a href="https://geekuninstaller.com/">https://geekuninstaller.com</a></p><h3 id="录屏直播"><a href="#录屏直播" class="headerlink" title="录屏直播"></a>录屏直播</h3><p><a href="https://obsproject.com" target="_blank">OBS</a>：<a href="https://obsproject.com/">https://obsproject.com</a></p><h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3><p><a href="https://www.thunderbird.net/zh-CN/" target="_blank">Thunderbird</a>：<a href="https://www.thunderbird.net/zh-CN/">https://www.thunderbird.net/zh-CN/</a></p><h3 id="密码管理工具"><a href="#密码管理工具" class="headerlink" title="密码管理工具"></a>密码管理工具</h3><p><a href="https://keepass.info/" target="_blank">KeePass Password Safe</a>：<a href="https://keepass.info/">https://keepass.info/</a></p>]]></content>
     
     
     <categories>
@@ -20,9 +155,34 @@
     
     <tags>
       
+      <tag>Windwos</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>TeamSpeak3权限管理</title>
+    <link href="/posts/ts3manage1.html"/>
+    <url>/posts/ts3manage1.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="权限图标设置"><a href="#权限图标设置" class="headerlink" title="权限图标设置"></a>权限图标设置</h1><p><a class="btn" href="https://tsicons.com/" title="tsicons">TEAMSPEAK 3 图标</a><br>点击权限（M），在设置右上角点击图标，将下载好的文件解压上传即可使用。<br><img src="/img/tubiao.jpg"></p><h1 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h1><p>首先需要在设置里开启高级权限选项，方便后续设置<br><img src="/img/guanli6.png"><br><a class="btn" href="https://www.teamspeak3.com/teamspeak-3-server-permission-list.php" title="TeamSpeak">TEAMSPEAK 3 权限列表</a>，如有不同想法，可看此文档根据需要进行更改。</p><p class="note note-danger">修改权限一定要先修改完精简页面里的权限之后再打开高级权限页面进行修改，如果先更改高级权限再去修改精简页面权限，那么高级页面里面的部分设置会被重置</p><h2 id="设置权限分组"><a href="#设置权限分组" class="headerlink" title="设置权限分组"></a>设置权限分组</h2><p><img src="/img/quanxianfenzu.jpg"></p><h3 id="服务器权限："><a href="#服务器权限：" class="headerlink" title="服务器权限："></a>服务器权限：</h3><p>默认用户：高级频道标识： 订阅等级  0  加入等级 0  删除频道等级：0<br>正式用户：高级频道标识： 订阅等级  0  加入等级 0  删除频道等级：0<br>高级频道标识： 订阅等级 ：10  加入等级 10  删除频道等级：0<br>服务器房管： 订阅等级 ：60  加入等级 60  删除频道等级：60<br>最高权限：订阅等级 ：75 加入等级75  删除频道等级：75<br>（子频道频道权限默认自动继承在父频道的权限）</p><h3 id="频道组权限"><a href="#频道组权限" class="headerlink" title="频道组权限"></a>频道组权限</h3><p>频道房主：订阅等级 60  加入等级 60 删除频道等级：60<br>频道房管：订阅等级 40  加入等级 40 删除频道等级：40<br>频道成员：订阅等级 20  加入等级 20  删除频道等级：20</p><h3 id="频道设置条件"><a href="#频道设置条件" class="headerlink" title="频道设置条件"></a>频道设置条件</h3><p><img src="/img/pindaodengji.jpg"></p><p>普通频道 ：订阅等级  0  加入等级 0  删除频道等级：75<br>普通子频道： 订阅等级  0  加入等级 0  删除频道等级：75</p><p>高级频道： 订阅等级  10  加入等级 10  删除频道等级：75<br>高级子频道： 订阅等级  10  加入等级 10  删除频道等级：75</p><p>私人频道：订阅等级 60  加入等级 60  删除频道等级：60<br>私人子频道：订阅等级 20  加入等级 20（如果有多个子频道，也可以设置）  删除频道等级：60 （60代表只有频道房主可以删除此频道）<br>私人子子频道：订阅等级  20 加入等级 20  删除频道等级：40  （40代表管理员可以删除此频道）<br>私人子***子： 订阅等级 20 加入等级 20  删除频道等级：40<br>（密码版本将加入等级改为0）</p><h3 id="设置权限对应等级"><a href="#设置权限对应等级" class="headerlink" title="设置权限对应等级"></a>设置权限对应等级</h3><p>设置删除权限等级：<br>进入高级权限-&gt;Channel-&gt;Delete，将i_channel_delete_power 更改为对应等级<br>修改加入和订阅权限：<br>进入高级权限-&gt;Channel-&gt;Access<br>b_channel_join_permanent加入永久频道等级<br>b_channel_join_semi_permanent加入半永久频道等级<br>b_channel_join_temporary  加入半临时频道等级<br>b_virtualserver_join_ignore_password  加入虚拟服务器忽略其密码（填写对应等级 如果勾选虽然提示密码但是直接点确定可以直接进入不勾选就需要输入密码才可以进入）<br>b_channel_join_ignore_maxclients  忽略通道最大客户端限制 （勾选无视频道最大人数 不勾选无法进入满人房间）<br>i_channel_join_power    频道加入等级<br>i_channel_needed_join_power所需频道加入等级<br>i_channel_subscribe_power频道订阅等级<br>i_channel_needed_subscribe_power所需的频道订阅等级<br>i_channel_description_view_power查看频道描述等级<br>i_channel_needed_description_view_power 查看所需频道描述等级</p><p class="note note-danger">如何Access里面没有这些参数，鼠标放到access上右键点击Add Permission Group就有了</p><p><img src="/img/quanxian.jpg"></p><h1 id="权限恢复"><a href="#权限恢复" class="headerlink" title="权限恢复"></a>权限恢复</h1><p class="note note-danger">如果是服务器主丢失权限那么只能重新搭建服务器才可以恢复权限</p><h2 id="方法1：开启自动同步身份信息"><a href="#方法1：开启自动同步身份信息" class="headerlink" title="方法1：开启自动同步身份信息"></a>方法1：开启自动同步身份信息</h2><p>开启身份同步信息就需要登录上号<br>点击上方导航栏工具-&gt;设置-&gt;myteamspeak 进行登录，下方可选择自动同步。<br><img src="/img/quanxian1.jpg"></p><p class="note note-danger">网络环境不好的时候可能同步不上</p><h2 id="方法2：手动同步"><a href="#方法2：手动同步" class="headerlink" title="方法2：手动同步"></a>方法2：手动同步</h2><p>点击上方导航栏工具-&gt;身份，此时能看到本地身份有一个选项，右键点击导出一个.ini文件，更换电脑时在将此文件导入并设置为默认选项即可。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/quanxian2.jpg"></div><div class="group-image-wrap"><img src="/img/quanxian3.jpg"></div></div></div><p class="note note-danger">手动同步之后一定要试一下当下同步的身份是否正确，别同步成没有任何权限的身份，不然只能重新搭建获取服务器管理权限，安全起见创建权限密钥最稳妥</p><h2 id="方法3：创建权限密钥"><a href="#方法3：创建权限密钥" class="headerlink" title="方法3：创建权限密钥"></a>方法3：创建权限密钥</h2><p class="note note-danger">拥有创建密钥的权限，需要将“分配和删除成员”选项勾选，并选择可创建权限密钥等级，密钥使用过后就会失效，建议多创建几个。防止丢失</p><ol><li>点击软件上方的权限（M），点击权限密钥</li></ol><p><img src="/img/ts19.png"><br>2. 创建服务器密钥类型</p><p><img src="/img/ts20.png"></p><h3 id="密钥使用"><a href="#密钥使用" class="headerlink" title="密钥使用"></a>密钥使用</h3><p>点击上方权限（M）-&gt;使用权限密钥输入即可恢复权限。</p><h1 id="账号密钥"><a href="#账号密钥" class="headerlink" title="账号密钥"></a>账号密钥</h1><p>当我们创建账号登录使用的时候，如果更换电脑登录那么软件需要我们输入账号的密钥，这个密码在创建的时候会提示。<br>如果我们丢失可以在工具-&gt;选项-&gt;myTeamSpeak-&gt;新的恢复密钥来创建新的密钥<br><img src="/img/ts21.png" alt="账号1"></p><p class="note note-danger">创建新的密钥之后权限会丢失，请提前备份好权限密钥</p><h2 id="服务器设置模板下载即使用"><a href="#服务器设置模板下载即使用" class="headerlink" title="服务器设置模板下载即使用"></a>服务器设置模板下载即使用</h2><p><a class="btn" href="https://a1e.lanzouw.com/i2tBz0zg02uj" title="TeamSpeak服务器">ts服务器模板下载</a></p><p>我们将文件解压获得两个文件admin.ini和ts3server.sqlitedb。<br>我们将ts3server复制到ts3服务器文件夹里即可。</p><p>接下来我用启动服务器，使用客服端连接进入。打开工具-&gt;身份-&gt;空白地方右键导入选中admin.ini获取最高权限。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Teamspeak3</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>设置</tag>
       
-      <tag>Teamspeak</tag>
+      <tag>Teamspeak3</tag>
       
     </tags>
     
@@ -35,21 +195,19 @@
     <link href="/posts/ts3server.html"/>
     <url>/posts/ts3server.html</url>
     
-    <content type="html"><![CDATA[<h2 id="服务器端下载"><a href="#服务器端下载" class="headerlink" title="服务器端下载"></a>服务器端下载</h2><p><a class="btn" href="https://wwt.lanzouw.com/iEqWY0h6h0de" title="TeamSpeak">Windwos服务器32-BIT</a><a class="btn" href="https://wwt.lanzouw.com/iz4pL0h6h0cd" title="TeamSpeak">Windwos服务器64-BIT</a><a class="btn" href="https://a1e.lanzouw.com/ioJta0zei2xi" title="TeamSpeak">Linux服务器32-BIT</a><a class="btn" href="https://a1e.lanzouw.com/i7BCs0zei3gh" title="TeamSpeak">Linux服务器64-BIT</a><a class="btn" href="https://a1e.lanzouw.com/iIK9T0zei30b" title="TeamSpeak">Mac OS</a><a class="btn" href="https://a1e.lanzouw.com/iVgp70zei2vg" title="TeamSpeak">Freebsd</a></p><p class="note note-danger">下载版本号为：3.13.7，请确认为官网版本最新版本再下载</p><p class="note note-danger">因盘不支持bz2格式，我将linux服务器文件我将文件压缩为.ZIP格式，下载后请先自行解压一下</p><h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><ol><li>下载服务器文件<br>下载好服务器进行解压，并打开ats3server.exe。<br><img src="/img/fuwuqi.jpg"></li></ol><p>一定要保存最下方一串字符。在用户端第一次进入此服务器是会提示使用密钥，输入此字符后获取最高权限。<br><img src="/img/fuwuqi2.jpg"></p><ol start="2"><li><p>端口映射<br>9987 UDP 默认语音服务器端口<br>10011 TCP ServerQuery raw 端口<br>30033 TCP 文件传输端口<br>云服务器：云服务器进入安全组-&gt;配置规则，将上上方端口输入即可。到这里云服务器搭建ts服务器就算完成可以正常使用了。<br>本地电脑：进入光猫找到端口映射（端口转发），输入上面端口<br>  <img src="/img/duankouyingshe.jpg"><br>服务器名称：随便输入，本地Ip地址：输入作为服务器电脑对应的局域网Ip地址</p><p class="note note-danger">因为没有文件传输等功能需要所以只是映射了基本通讯功能9987</p></li><li><p>申请动态公网Ip<br>拥有动态公网ip，其他非本地网络的用户才可以连接到你的服务器。<br>具体申请可拨打运营商电话进行索要，理由：安装摄像头需要远程查看。<br>这里介绍联通的方法：拨打96480（宽带专线客服），一般说要公网ip直接就给你了。</p></li><li><p>光猫修改桥接模式，路由器进行拨号上网<br>拨打运营商电话要求将光猫修改为桥接模式，部分地区可远程直接帮你修改，又或者让宽带师傅上门给你修改。记得询问一下你的宽带账号密码，然后用路由器进行拨号上网。</p></li></ol><p>做完上面本地电脑服务器也算部署完成可以正常进行使用。下面就是一切无法正常使用的解决办法。</p><ol start="5"><li><p>DDNS（申请域名绑定动态公网ip）<br>因为我们申请的公网ip是动态的，一段时间就会变化，在输入之前的ip就会导致连接不进去非常麻烦，但通过DDNS将动态ip与域名进行绑定，此时我们就可以通过域名进行连接服务器，如果ip变化，域名也会自动获取最新的ip地址。</p></li><li><p>注册服务器别名<br>云服务器的公网ip地址比较难记，又或者申请的域名太长，创建一个Diy的域名更方面使用<br><a class="btn" href="https://www.myteamspeak.com/login" title="TeamSpeak">注册地址</a><br>登录之后点击右上方的服务器昵称（SERVER NICKNAMES），输入自己想要的别名，然后殿下Ip，第一排输入自己的服务器地址（公网IP），端口输入9987</p></li></ol><p><img src="/img/bieming.jpg"></p><h3 id="部分无法连接ts服务器问题解决办法"><a href="#部分无法连接ts服务器问题解决办法" class="headerlink" title="部分无法连接ts服务器问题解决办法"></a>部分无法连接ts服务器问题解决办法</h3><ol><li><p>用公网ip无法连接服务器，但局域网可以连接。<br> 方法1：打开windwos安全中心，关闭防火墙<br> 方法2：打开windwos安全中心，点击防火墙和网络保护-&gt;允许应用通过防火墙-&gt;更改设置-&gt;允许其他应用-&gt;找到ts3server.exe选择即可。<br> 方法3：打开windwos安全中心，点击防火墙和网络保护-&gt;高级设置-&gt;入站规则右键选择新建规则-&gt;选择端口-&gt;UDP 特定本地端口 9987 -&gt;点击两次下一步保存即可。</p></li><li><p>别人可以正常访问，但你本地电脑通过公网ip连接不进去<br>此问题可能是使用路由器里面的游戏加速器导致的问题，又或者本地电脑使用了vpn导致的。这种情况我们使用本地电脑里面的局域网Ip进入服务器即可正常与朋友进行语音。</p><p class="note note-danger">通过192开通的局域网ip连接服务器仅有本地同一网络设备的可以使用，其他设备只能通过动态公网ip进行连接使用</p></li></ol><h2 id="更新服务器及服务器备份"><a href="#更新服务器及服务器备份" class="headerlink" title="更新服务器及服务器备份"></a>更新服务器及服务器备份</h2><p>TeamSpeak服务器如果更新，或者版本过低也会导致无法连接服务器，这里我们需要对服务器设置进行备份。<br>我们仅需打开服务器所在文件夹，将ts3server.sqlitedb进行保存，此文件保存ts服务器里面所有设置只需要将此文件复制到新买的解压文件里面即可。</p><h2 id="服务器设置模板下载即使用"><a href="#服务器设置模板下载即使用" class="headerlink" title="服务器设置模板下载即使用"></a>服务器设置模板下载即使用</h2><p><a class="btn" href="https://a1e.lanzouw.com/i2tBz0zg02uj" title="TeamSpeak服务器">ts服务器模板下载</a></p><p>我们将文件解压获得两个文件admin.ini和ts3server.sqlitedb。<br>我们将ts3server复制到ts3服务器文件夹里即可。</p><p>接下来我用启动服务器，使用客服端连接进入。打开工具-&gt;身份-&gt;空白地方右键导入选中admin.ini获取最高权限。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="服务器端下载"><a href="#服务器端下载" class="headerlink" title="服务器端下载"></a>服务器端下载</h2><p><a class="btn" href="https://wwt.lanzouw.com/iEqWY0h6h0de" title="TeamSpeak">Windwos服务器32-BIT</a><a class="btn" href="https://wwt.lanzouw.com/iz4pL0h6h0cd" title="TeamSpeak">Windwos服务器64-BIT</a><a class="btn" href="https://a1e.lanzouw.com/ioJta0zei2xi" title="TeamSpeak">Linux服务器32-BIT</a><a class="btn" href="https://a1e.lanzouw.com/i7BCs0zei3gh" title="TeamSpeak">Linux服务器64-BIT</a><a class="btn" href="https://a1e.lanzouw.com/iIK9T0zei30b" title="TeamSpeak">Mac OS</a><a class="btn" href="https://a1e.lanzouw.com/iVgp70zei2vg" title="TeamSpeak">Freebsd</a></p><p class="note note-danger">下载版本号为：3.13.7，请确认为官网版本最新版本再下载</p><p class="note note-danger">因盘不支持bz2格式，我将linux服务器文件我将文件压缩为.ZIP格式，下载后请先自行解压一下</p><h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><ol><li>下载服务器文件<br>下载好服务器进行解压，并打开ats3server.exe。<br><img src="/img/fuwuqi.jpg"></li></ol><p>一定要保存最下方一串字符。在用户端第一次进入此服务器是会提示使用密钥，输入此字符后获取最高权限。<br><img src="/img/fuwuqi2.jpg"></p><ol start="2"><li><p>端口映射<br>9987 UDP 默认语音服务器端口<br>10011 TCP ServerQuery raw 端口<br>30033 TCP 文件传输端口<br>云服务器：云服务器进入安全组-&gt;配置规则，将上上方端口输入即可。到这里云服务器搭建ts服务器就算完成可以正常使用了。<br>本地电脑：进入光猫找到端口映射（端口转发），输入上面端口<br>  <img src="/img/duankouyingshe.jpg"><br>服务器名称：随便输入，本地Ip地址：输入作为服务器电脑对应的局域网Ip地址</p><p class="note note-danger">因为没有文件传输等功能需要所以只是映射了基本通讯功能9987</p></li><li><p>申请动态公网Ip<br>拥有动态公网ip，其他非本地网络的用户才可以连接到你的服务器。<br>具体申请可拨打运营商电话进行索要，理由：安装摄像头需要远程查看。<br>这里介绍联通的方法：拨打96480（宽带专线客服），一般说要公网ip直接就给你了。</p></li><li><p>光猫修改桥接模式，路由器进行拨号上网<br>拨打运营商电话要求将光猫修改为桥接模式，部分地区可远程直接帮你修改，又或者让宽带师傅上门给你修改。记得询问一下你的宽带账号密码，然后用路由器进行拨号上网。</p></li></ol><p>做完上面本地电脑服务器也算部署完成可以正常进行使用。下面就是一切无法正常使用的解决办法。</p><ol start="5"><li><p>DDNS（申请域名绑定动态公网ip）<br>因为我们申请的公网ip是动态的，一段时间就会变化，在输入之前的ip就会导致连接不进去非常麻烦，但通过DDNS将动态ip与域名进行绑定，此时我们就可以通过域名进行连接服务器，如果ip变化，域名也会自动获取最新的ip地址。</p></li><li><p>注册服务器别名<br>云服务器的公网ip地址比较难记，又或者申请的域名太长，创建一个Diy的域名更方面使用<br><a class="btn" href="https://www.myteamspeak.com/login" title="TeamSpeak">注册地址</a><br>登录之后点击右上方的服务器昵称（SERVER NICKNAMES），输入自己想要的别名，然后殿下Ip，第一排输入自己的服务器地址（公网IP），端口输入9987</p></li></ol><p><img src="/img/bieming.jpg"></p><h3 id="部分无法连接ts服务器问题解决办法"><a href="#部分无法连接ts服务器问题解决办法" class="headerlink" title="部分无法连接ts服务器问题解决办法"></a>部分无法连接ts服务器问题解决办法</h3><ol><li><p>用公网ip无法连接服务器，但局域网可以连接。<br> 方法1：打开windwos安全中心，关闭防火墙<br> 方法2：打开windwos安全中心，点击防火墙和网络保护-&gt;允许应用通过防火墙-&gt;更改设置-&gt;允许其他应用-&gt;找到ts3server.exe选择即可。<br> 方法3：打开windwos安全中心，点击防火墙和网络保护-&gt;高级设置-&gt;入站规则右键选择新建规则-&gt;选择端口-&gt;UDP 特定本地端口 9987 -&gt;点击两次下一步保存即可。</p></li><li><p>别人可以正常访问，但你本地电脑通过公网ip连接不进去<br>此问题可能是使用路由器里面的游戏加速器导致的问题，又或者本地电脑使用了vpn导致的。这种情况我们使用本地电脑里面的局域网Ip进入服务器即可正常与朋友进行语音。</p><p class="note note-danger">通过192开通的局域网ip连接服务器仅有本地同一网络设备的可以使用，其他设备只能通过动态公网ip进行连接使用</p></li></ol><h2 id="更新服务器及服务器备份"><a href="#更新服务器及服务器备份" class="headerlink" title="更新服务器及服务器备份"></a>更新服务器及服务器备份</h2><p>TeamSpeak服务器如果更新，或者版本过低也会导致无法连接服务器，这里我们需要对服务器设置进行备份。<br>我们仅需打开服务器所在文件夹，将ts3server.sqlitedb进行保存，此文件保存ts服务器里面所有设置只需要将此文件复制到新买的解压文件里面即可。</p>]]></content>
     
     
     <categories>
       
-      <category>软件</category>
+      <category>部署服务</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Teamspeak</tag>
-      
-      <tag>服务器</tag>
+      <tag>Teamspeak3</tag>
       
     </tags>
     
@@ -58,23 +216,27 @@
   
   
   <entry>
-    <title>Docker搭建家庭影院</title>
-    <link href="/posts/Docker.html"/>
-    <url>/posts/Docker.html</url>
+    <title>Jellyfin家庭影院</title>
+    <link href="/posts/jellyfin.html"/>
+    <url>/posts/jellyfin.html</url>
     
-    <content type="html"><![CDATA[<h1 id="安装Navidrome-家庭音乐服务器（Docker版）"><a href="#安装Navidrome-家庭音乐服务器（Docker版）" class="headerlink" title="安装Navidrome 家庭音乐服务器（Docker版）"></a>安装Navidrome 家庭音乐服务器（Docker版）</h1><p>首先安装<a href="https://www.docker.com/" target="_blank">Docker</a>，之后Win+S 输入PowerShell输入</p><div class="code-wrapper"><pre><code class="hljs arcade">docker run -d  --name navidrome  --restart=unless-stopped  --user $(id -u):$(id -g) -v A:<span class="hljs-regexp">/Music:/mu</span>sic  -v A:<span class="hljs-regexp">/navidrom/</span>data:<span class="hljs-regexp">/data  -p 4533:4533  -e ND_LOGLEVEL=info  deluan/</span>navidrome:latest</code></pre></div><p>至此navidrome安装完成：</p><p class="note note-danger">-v A:/Music:/music(存音乐的文件夹)-v A:/navidrom/data:/data（存配置文件夹） 改成自己的地址 </p><p>如果我们想要登录的时候直接进入音乐页面，可以添加额外配置实现</p><div class="code-wrapper"><pre><code class="hljs arcade">docker run -d  --name navidrome  --restart=unless-stopped  --user $(id -u):$(id -g) -v A:<span class="hljs-regexp">/docker/Mu</span>sic:<span class="hljs-regexp">/music  -v A:/</span>docker/navidrom/data:<span class="hljs-regexp">/data  -p 4533:4533  -e ND_LOGLEVEL=info -e ND_DEVAUTOLOGINUSERNAME=admin deluan/</span>navidrome:latest </code></pre></div><p>这样再次进入页面，就不需要登录即可进入。<br><a href="https://www.navidrome.org/docs/usage/configuration-options/" target="_blank">更多配置配置选项</a></p><p>访问地址为：本地ip+端口（我的是192.168.50.188：4533）输入即可播放本地存储音乐</p><h1 id="Jellyfin-家庭影视，影月服务器-（Docker）"><a href="#Jellyfin-家庭影视，影月服务器-（Docker）" class="headerlink" title="Jellyfin 家庭影视，影月服务器 （Docker）"></a>Jellyfin 家庭影视，影月服务器 （Docker）</h1><p> 打开PowerShell 输入</p> <div class="code-wrapper"><pre><code class="hljs arcade">docker run -d -p <span class="hljs-number">8096</span>:<span class="hljs-number">8096</span> -v M:<span class="hljs-regexp">/jellyfin/</span>config:<span class="hljs-regexp">/config -v M:/m</span>edia:<span class="hljs-regexp">/media jellyfin/</span>jellyfin</code></pre></div> <p class="note note-danger">如果下载一直卡着不动，电脑重启在进行尝试 </p><p> 访问地址为：本地ip+端口（我的是192.168.50.188：8096）</p>]]></content>
+    <content type="html"><![CDATA[<ol><li>创建用户并切换用户</li></ol><div class="code-wrapper"><pre><code class="hljs mipsasm"><span class="hljs-keyword">adduser </span><span class="hljs-keyword">jellyfin </span>su - <span class="hljs-keyword">jellyfin</span></code></pre></div><ol start="2"><li>创建文件并将文件修改成所有人可以访问</li></ol><div class="code-wrapper"><pre><code class="hljs bash">sudo <span class="hljs-built_in">mkdir</span> <span class="hljs-built_in">chmod</span> 777 /home/jellyfin</code></pre></div><ol start="3"><li>安装jellyfin</li></ol><div class="code-wrapper"><pre><code class="hljs cmake">apt <span class="hljs-keyword">install</span> jellyfin</code></pre></div><ol start="4"><li>开启端口8096</li></ol><div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> ufw <span class="hljs-literal">allow</span> <span class="hljs-number">8096</span></code></pre></div><ol start="5"><li>设置自启动</li></ol><div class="code-wrapper"><pre><code class="hljs nsis"><span class="hljs-comment">#启动</span>sudo <span class="hljs-params">system</span>ctl start jellyfin<span class="hljs-comment">#停止</span>sudo <span class="hljs-params">system</span>ctl stop jellyfin<span class="hljs-comment">#自启动</span>sudo <span class="hljs-params">system</span>ctl enable jellyfin</code></pre></div>]]></content>
     
     
     <categories>
       
-      <category>软件</category>
+      <category>部署Linux服务</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>docker</tag>
+      <tag>服务器</tag>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>jellyfin</tag>
       
     </tags>
     
@@ -146,16 +308,16 @@
     
     <categories>
       
-      <category>软件</category>
+      <category>Teamspeak3</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Teamspeak</tag>
-      
       <tag>语音软件</tag>
+      
+      <tag>Teamspeak3</tag>
       
     </tags>
     

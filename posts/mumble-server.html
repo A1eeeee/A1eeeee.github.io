@@ -18,24 +18,24 @@
   <meta name="author" content="Ale">
   <meta name="keywords" content="">
   
-    <meta name="description" content="搭建Teamspeak服务器">
+    <meta name="description" content="搭建mumble语音服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TeamSpeak服务器">
-<meta property="og:url" content="https://a1e.top/posts/ts3server.html">
+<meta property="og:title" content="mumble-server">
+<meta property="og:url" content="https://a1e.top/posts/mumble-server.html">
 <meta property="og:site_name" content="Ale">
-<meta property="og:description" content="搭建Teamspeak服务器">
+<meta property="og:description" content="搭建mumble语音服务器">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://a1e.top/img/ts3serverlogo.png">
-<meta property="article:published_time" content="2023-06-15T17:23:16.000Z">
-<meta property="article:modified_time" content="2023-09-20T09:59:18.553Z">
+<meta property="og:image" content="https://a1e.top/img/mumble.png">
+<meta property="article:published_time" content="2023-09-20T10:42:58.000Z">
+<meta property="article:modified_time" content="2023-09-20T10:47:13.797Z">
 <meta property="article:author" content="Ale">
-<meta property="article:tag" content="Teamspeak3">
+<meta property="article:tag" content="Mumble">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://a1e.top/img/ts3serverlogo.png">
+<meta name="twitter:image" content="https://a1e.top/img/mumble.png">
   
   
   
-  <title>TeamSpeak服务器 - Ale</title>
+  <title>mumble-server - Ale</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -183,13 +183,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/ts3serverlogo.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/mumble.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">TeamSpeak服务器</span>
+            <span id="subtitle">mumble-server</span>
           
         </div>
 
@@ -205,8 +205,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-16 01:23" pubdate>
-          星期五, 六月 16日 2023, 1:23 凌晨
+        <time datetime="2023-09-20 18:42" pubdate>
+          星期三, 九月 20日 2023, 6:42 晚上
         </time>
       </span>
     
@@ -258,43 +258,30 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">TeamSpeak服务器</h1>
+            <h1 style="display: none">mumble-server</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="服务器端下载"><a href="#服务器端下载" class="headerlink" title="服务器端下载"></a>服务器端下载</h2><p><a class="btn" target="_blank" rel="noopener" href="https://wwt.lanzouw.com/iEqWY0h6h0de" title="TeamSpeak">Windwos服务器32-BIT</a><a class="btn" target="_blank" rel="noopener" href="https://wwt.lanzouw.com/iz4pL0h6h0cd" title="TeamSpeak">Windwos服务器64-BIT</a><a class="btn" target="_blank" rel="noopener" href="https://a1e.lanzouw.com/ioJta0zei2xi" title="TeamSpeak">Linux服务器32-BIT</a><a class="btn" target="_blank" rel="noopener" href="https://a1e.lanzouw.com/i7BCs0zei3gh" title="TeamSpeak">Linux服务器64-BIT</a><a class="btn" target="_blank" rel="noopener" href="https://a1e.lanzouw.com/iIK9T0zei30b" title="TeamSpeak">Mac OS</a><a class="btn" target="_blank" rel="noopener" href="https://a1e.lanzouw.com/iVgp70zei2vg" title="TeamSpeak">Freebsd</a></p>
-<p class="note note-danger">下载版本号为：3.13.7，请确认为官网版本最新版本再下载</p>
-<p class="note note-danger">因盘不支持bz2格式，我将linux服务器文件我将文件压缩为.ZIP格式，下载后请先自行解压一下</p>
+                <div class="code-wrapper"><pre><code class="hljs axapta"><span class="hljs-meta">#创建用户 </span>
+adduser mumble
+<span class="hljs-meta">#添加sudo权限（需要切换到root用户）</span>
+sudo adduser mumble sudo
+切换到mumble用户
+su -mumble
+<span class="hljs-meta">#安装</span>
+sudo apt install mumble-<span class="hljs-keyword">server</span>
+<span class="hljs-meta">#启动</span>
+sudo dpkg-reconfigure mumble-<span class="hljs-keyword">server</span>
+<span class="hljs-meta">#配置文件</span>
+sudo vi /etc/mumble-<span class="hljs-keyword">server</span>.ini
+<span class="hljs-meta">#设置完重启配置文件 </span>
+service mumble-<span class="hljs-keyword">server</span> restart重启配置文件
+<span class="hljs-meta">#设置自启动</span>
+sudo systemctl enable mumble-<span class="hljs-keyword">server</span>
+<span class="hljs-meta">#开启端口65738</span>
+sudo ufw allow <span class="hljs-number">65738</span></code></pre></div>
 
-<h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><ol>
-<li>下载服务器文件<br>下载好服务器进行解压，并打开ats3server.exe。<br><img src="/img/fuwuqi.jpg" srcset="/img/loading.gif" lazyload></li>
-</ol>
-<p>一定要保存最下方一串字符。在用户端第一次进入此服务器是会提示使用密钥，输入此字符后获取最高权限。<br><img src="/img/fuwuqi2.jpg" srcset="/img/loading.gif" lazyload></p>
-<ol start="2">
-<li><p>端口映射<br>9987 UDP 默认语音服务器端口<br>10011 TCP ServerQuery raw 端口<br>30033 TCP 文件传输端口<br>云服务器：云服务器进入安全组-&gt;配置规则，将上上方端口输入即可。到这里云服务器搭建ts服务器就算完成可以正常使用了。<br>本地电脑：进入光猫找到端口映射（端口转发），输入上面端口<br>  <img src="/img/duankouyingshe.jpg" srcset="/img/loading.gif" lazyload><br>服务器名称：随便输入，本地Ip地址：输入作为服务器电脑对应的局域网Ip地址</p>
-<p class="note note-danger">因为没有文件传输等功能需要所以只是映射了基本通讯功能9987</p>
-</li>
-<li><p>申请动态公网Ip<br>拥有动态公网ip，其他非本地网络的用户才可以连接到你的服务器。<br>具体申请可拨打运营商电话进行索要，理由：安装摄像头需要远程查看。<br>这里介绍联通的方法：拨打96480（宽带专线客服），一般说要公网ip直接就给你了。</p>
-</li>
-<li><p>光猫修改桥接模式，路由器进行拨号上网<br>拨打运营商电话要求将光猫修改为桥接模式，部分地区可远程直接帮你修改，又或者让宽带师傅上门给你修改。记得询问一下你的宽带账号密码，然后用路由器进行拨号上网。</p>
-</li>
-</ol>
-<p>做完上面本地电脑服务器也算部署完成可以正常进行使用。下面就是一切无法正常使用的解决办法。</p>
-<ol start="5">
-<li><p>DDNS（申请域名绑定动态公网ip）<br>因为我们申请的公网ip是动态的，一段时间就会变化，在输入之前的ip就会导致连接不进去非常麻烦，但通过DDNS将动态ip与域名进行绑定，此时我们就可以通过域名进行连接服务器，如果ip变化，域名也会自动获取最新的ip地址。</p>
-</li>
-<li><p>注册服务器别名<br>云服务器的公网ip地址比较难记，又或者申请的域名太长，创建一个Diy的域名更方面使用<br><a class="btn" target="_blank" rel="noopener" href="https://www.myteamspeak.com/login" title="TeamSpeak">注册地址</a><br>登录之后点击右上方的服务器昵称（SERVER NICKNAMES），输入自己想要的别名，然后殿下Ip，第一排输入自己的服务器地址（公网IP），端口输入9987</p>
-</li>
-</ol>
-<p><img src="/img/bieming.jpg" srcset="/img/loading.gif" lazyload></p>
-<h3 id="部分无法连接ts服务器问题解决办法"><a href="#部分无法连接ts服务器问题解决办法" class="headerlink" title="部分无法连接ts服务器问题解决办法"></a>部分无法连接ts服务器问题解决办法</h3><ol>
-<li><p>用公网ip无法连接服务器，但局域网可以连接。<br> 方法1：打开windwos安全中心，关闭防火墙<br> 方法2：打开windwos安全中心，点击防火墙和网络保护-&gt;允许应用通过防火墙-&gt;更改设置-&gt;允许其他应用-&gt;找到ts3server.exe选择即可。<br> 方法3：打开windwos安全中心，点击防火墙和网络保护-&gt;高级设置-&gt;入站规则右键选择新建规则-&gt;选择端口-&gt;UDP 特定本地端口 9987 -&gt;点击两次下一步保存即可。</p>
-</li>
-<li><p>别人可以正常访问，但你本地电脑通过公网ip连接不进去<br>此问题可能是使用路由器里面的游戏加速器导致的问题，又或者本地电脑使用了vpn导致的。这种情况我们使用本地电脑里面的局域网Ip进入服务器即可正常与朋友进行语音。</p>
-<p class="note note-danger">通过192开通的局域网ip连接服务器仅有本地同一网络设备的可以使用，其他设备只能通过动态公网ip进行连接使用</p></li>
-</ol>
-<h2 id="更新服务器及服务器备份"><a href="#更新服务器及服务器备份" class="headerlink" title="更新服务器及服务器备份"></a>更新服务器及服务器备份</h2><p>TeamSpeak服务器如果更新，或者版本过低也会导致无法连接服务器，这里我们需要对服务器设置进行备份。<br>我们仅需打开服务器所在文件夹，将ts3server.sqlitedb进行保存，此文件保存ts服务器里面所有设置只需要将此文件复制到新买的解压文件里面即可。</p>
 
                 
               </div>
@@ -313,7 +300,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1/" class="category-chain-item">部署服务</a>
+  <a href="/categories/%E9%83%A8%E7%BD%B2Linux%E6%9C%8D%E5%8A%A1/" class="category-chain-item">部署Linux服务</a>
   
   
 
@@ -328,7 +315,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Teamspeak3/">#Teamspeak3</a>
+        <a href="/tags/Mumble/">#Mumble</a>
       
     </div>
   
@@ -340,8 +327,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>TeamSpeak服务器</div>
-      <div>https://a1e.top/posts/ts3server.html</div>
+      <div>mumble-server</div>
+      <div>https://a1e.top/posts/mumble-server.html</div>
     </div>
     <div class="license-meta">
       
@@ -353,7 +340,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月16日</div>
+          <div>2023年9月20日</div>
         </div>
       
       
@@ -385,18 +372,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/ts3manage1.html" title="TeamSpeak3权限管理">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">TeamSpeak3权限管理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/jellyfin.html" title="Jellyfin家庭影院">
-                        <span class="hidden-mobile">Jellyfin家庭影院</span>
+                      <a href="/posts/Minecraft-server.html" title="Minecraft-server">
+                        <span class="hidden-mobile">Minecraft-server</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

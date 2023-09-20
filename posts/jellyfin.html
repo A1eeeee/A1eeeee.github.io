@@ -20,22 +20,24 @@
   
     <meta name="description" content="创建本地局域网在线音乐播放器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker搭建家庭影院">
-<meta property="og:url" content="https://a1e.top/posts/Docker.html">
+<meta property="og:title" content="Jellyfin家庭影院">
+<meta property="og:url" content="https://a1e.top/posts/jellyfin.html">
 <meta property="og:site_name" content="Ale">
 <meta property="og:description" content="创建本地局域网在线音乐播放器">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://a1e.top/img/docker.png">
+<meta property="og:image" content="https://a1e.top/img/jellyfin.png">
 <meta property="article:published_time" content="2023-02-03T12:08:12.000Z">
-<meta property="article:modified_time" content="2023-06-15T18:44:42.085Z">
+<meta property="article:modified_time" content="2023-09-20T10:27:18.416Z">
 <meta property="article:author" content="Ale">
-<meta property="article:tag" content="docker">
+<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="jellyfin">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://a1e.top/img/docker.png">
+<meta name="twitter:image" content="https://a1e.top/img/jellyfin.png">
   
   
   
-  <title>Docker搭建家庭影院 - Ale</title>
+  <title>Jellyfin家庭影院 - Ale</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -183,13 +185,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/docker.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/jellyfin.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Docker搭建家庭影院</span>
+            <span id="subtitle">Jellyfin家庭影院</span>
           
         </div>
 
@@ -258,29 +260,41 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Docker搭建家庭影院</h1>
+            <h1 style="display: none">Jellyfin家庭影院</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="安装Navidrome-家庭音乐服务器（Docker版）"><a href="#安装Navidrome-家庭音乐服务器（Docker版）" class="headerlink" title="安装Navidrome 家庭音乐服务器（Docker版）"></a>安装Navidrome 家庭音乐服务器（Docker版）</h1><p>首先安装<a href="https://www.docker.com/" target="_blank">Docker</a>，之后Win+S 输入PowerShell输入</p>
-<div class="code-wrapper"><pre><code class="hljs arcade">docker run -d  --name navidrome  --restart=unless-stopped  --user $(id -u):$(id -g) -v A:<span class="hljs-regexp">/Music:/mu</span>sic  -v A:<span class="hljs-regexp">/navidrom/</span>data:<span class="hljs-regexp">/data  -p 4533:4533  -e ND_LOGLEVEL=info  deluan/</span>navidrome:latest</code></pre></div>
+                <ol>
+<li>创建用户并切换用户</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs mipsasm"><span class="hljs-keyword">adduser </span><span class="hljs-keyword">jellyfin </span>
+su - <span class="hljs-keyword">jellyfin</span></code></pre></div>
 
-<p>至此navidrome安装完成：</p>
-<p class="note note-danger">-v A:/Music:/music(存音乐的文件夹)-v A:/navidrom/data:/data（存配置文件夹） 改成自己的地址 </p>
+<ol start="2">
+<li>创建文件并将文件修改成所有人可以访问</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs bash">sudo <span class="hljs-built_in">mkdir</span> <span class="hljs-built_in">chmod</span> 777 /home/jellyfin</code></pre></div>
 
-<p>如果我们想要登录的时候直接进入音乐页面，可以添加额外配置实现</p>
-<div class="code-wrapper"><pre><code class="hljs arcade">docker run -d  --name navidrome  --restart=unless-stopped  --user $(id -u):$(id -g) -v A:<span class="hljs-regexp">/docker/Mu</span>sic:<span class="hljs-regexp">/music  -v A:/</span>docker/navidrom/data:<span class="hljs-regexp">/data  -p 4533:4533  -e ND_LOGLEVEL=info -e ND_DEVAUTOLOGINUSERNAME=admin deluan/</span>navidrome:latest 
-</code></pre></div>
-<p>这样再次进入页面，就不需要登录即可进入。<br><a href="https://www.navidrome.org/docs/usage/configuration-options/" target="_blank">更多配置配置选项</a></p>
-<p>访问地址为：本地ip+端口（我的是192.168.50.188：4533）输入即可播放本地存储音乐</p>
-<h1 id="Jellyfin-家庭影视，影月服务器-（Docker）"><a href="#Jellyfin-家庭影视，影月服务器-（Docker）" class="headerlink" title="Jellyfin 家庭影视，影月服务器 （Docker）"></a>Jellyfin 家庭影视，影月服务器 （Docker）</h1><p> 打开PowerShell 输入</p>
- <div class="code-wrapper"><pre><code class="hljs arcade">docker run -d -p <span class="hljs-number">8096</span>:<span class="hljs-number">8096</span> -v M:<span class="hljs-regexp">/jellyfin/</span>config:<span class="hljs-regexp">/config -v M:/m</span>edia:<span class="hljs-regexp">/media jellyfin/</span>jellyfin
-</code></pre></div>
- <p class="note note-danger">如果下载一直卡着不动，电脑重启在进行尝试 </p>
+<ol start="3">
+<li>安装jellyfin</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs cmake">apt <span class="hljs-keyword">install</span> jellyfin</code></pre></div>
 
-<p> 访问地址为：本地ip+端口（我的是192.168.50.188：8096）</p>
+<ol start="4">
+<li>开启端口8096</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> ufw <span class="hljs-literal">allow</span> <span class="hljs-number">8096</span></code></pre></div>
 
+<ol start="5">
+<li>设置自启动</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs nsis"><span class="hljs-comment">#启动</span>
+sudo <span class="hljs-params">system</span>ctl start jellyfin
+<span class="hljs-comment">#停止</span>
+sudo <span class="hljs-params">system</span>ctl stop jellyfin
+<span class="hljs-comment">#自启动</span>
+sudo <span class="hljs-params">system</span>ctl enable jellyfin</code></pre></div>
                 
               </div>
             
@@ -298,7 +312,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="category-chain-item">软件</a>
+  <a href="/categories/%E9%83%A8%E7%BD%B2Linux%E6%9C%8D%E5%8A%A1/" class="category-chain-item">部署Linux服务</a>
   
   
 
@@ -313,7 +327,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/docker/">#docker</a>
+        <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">#服务器</a>
+      
+        <a href="/tags/ubuntu/">#ubuntu</a>
+      
+        <a href="/tags/jellyfin/">#jellyfin</a>
       
     </div>
   
@@ -325,8 +343,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Docker搭建家庭影院</div>
-      <div>https://a1e.top/posts/Docker.html</div>
+      <div>Jellyfin家庭影院</div>
+      <div>https://a1e.top/posts/jellyfin.html</div>
     </div>
     <div class="license-meta">
       
