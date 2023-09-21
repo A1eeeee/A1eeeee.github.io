@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://a1e.top/posts/ubuntu.html</loc>
+    
+    <lastmod>2023-09-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://a1e.top/posts/99a4dc0c.html</loc>
     
     <lastmod>2023-09-21</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://a1e.top/posts/mumble-server.html</loc>
-    
-    <lastmod>2023-09-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://a1e.top/posts/ubuntu.html</loc>
     
     <lastmod>2023-09-20</lastmod>
     
