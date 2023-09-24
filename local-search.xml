@@ -8,7 +8,7 @@
     <link href="/posts/keepass.html"/>
     <url>/posts/keepass.html</url>
     
-    <content type="html"><![CDATA[<ol><li>将此程序以管理员身份运行</li><li>在防火墙设置中禁止联网</li><li>工具-&gt;设置-&gt;安装-&gt;高级中勾选在安全桌面管理密码</li><li>点击数据库-&gt;编辑群组-&gt;安全输入-&gt;替代默认序列为 中 输入 {DELAY 300}%+{DELAY 200}{CLEARFIELD}{USERNAME}{TAB}{PASSWORD}%+{DELAY 200} 实现输入密码自动将输入法切换英文</li><li>ctrl+l群组-&gt;自动输入勾选双通道自动输入混淆</li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>将此程序以管理员身份运行</p></li><li><p>在防火墙设置中禁止联网</p></li><li><p>工具-&gt;设置-&gt;安装-&gt;高级中勾选在安全桌面管理密码</p></li><li><p>点击数据库-&gt;编辑群组-&gt;安全输入-&gt;替代默认序列为 输入实现输入密码自动将输入法切换英文</p><div class="code-wrapper"><pre><code class="hljs dust"><span class="language-xml">^</span><span class="hljs-template-variable">&#123;SPACE&#125;</span><span class="hljs-template-variable">&#123;DELAY 100&#125;</span><span class="hljs-template-variable">&#123;CLEARFIELD&#125;</span><span class="hljs-template-variable">&#123;USERNAME&#125;</span><span class="hljs-template-variable">&#123;DELAY 100&#125;</span><span class="language-xml">^</span><span class="hljs-template-variable">&#123;SPACE&#125;</span><span class="hljs-template-variable">&#123;TAB&#125;</span><span class="hljs-template-variable">&#123;PASSWORD&#125;</span><span class="hljs-template-variable">&#123;DELAY 100&#125;</span><span class="hljs-template-variable">&#123;ENTER&#125;</span></code></pre></div></li><li><p>编辑记录-&gt;自动输入-&gt;勾选双通道自动输入混淆</p></li></ol>]]></content>
     
     
     <categories>
