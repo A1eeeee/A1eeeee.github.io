@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://a1e.top/img/mumble.png">
 <meta property="article:published_time" content="2023-09-20T10:42:58.000Z">
-<meta property="article:modified_time" content="2023-09-23T16:22:13.000Z">
+<meta property="article:modified_time" content="2023-09-24T10:04:35.696Z">
 <meta property="article:author" content="Ale">
 <meta property="article:tag" content="Mumble">
 <meta name="twitter:card" content="summary_large_image">
@@ -286,15 +286,17 @@ su -mumble
 sudo apt install mumble-<span class="hljs-keyword">server</span>
 <span class="hljs-meta">#启动</span>
 sudo dpkg-reconfigure mumble-<span class="hljs-keyword">server</span>
-<span class="hljs-meta">#配置文件</span>
-sudo vi /etc/mumble-<span class="hljs-keyword">server</span>.ini
-<span class="hljs-meta">#设置完重启配置文件 </span>
-service mumble-<span class="hljs-keyword">server</span> restart重启配置文件
+
 <span class="hljs-meta">#设置自启动</span>
 sudo systemctl enable mumble-<span class="hljs-keyword">server</span>
 <span class="hljs-meta">#开启端口65738</span>
 sudo ufw allow <span class="hljs-number">65738</span></code></pre></div>
 
+<h3 id="修改服务器信息"><a href="#修改服务器信息" class="headerlink" title="修改服务器信息"></a>修改服务器信息</h3> <div class="code-wrapper"><pre><code class="hljs awk"> <span class="hljs-comment">#配置文件</span>
+sudo vi <span class="hljs-regexp">/etc/mum</span>ble-server.ini
+<span class="hljs-comment">#设置完重启配置文件 </span>
+service mumble-server restart重启配置文件</code></pre></div>
+<p>welcomtext：服务器欢迎语句<br>port：端口<br>serverpassword：服务器密码<br>bandwidth：服务器音频质量<br>users：服务器可加入人数<br>registerName:更改默认Root频道名称</p>
 
                 
               </div>
