@@ -1,3 +1,4 @@
+https://a1e.top/posts/keepass.html
 https://a1e.top/posts/mumble.html
 https://a1e.top/posts/teamspeak3.html
 https://a1e.top/posts/99a4dc0c.html
@@ -30,6 +31,7 @@ https://a1e.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/
 https://a1e.top/tags/smb/
 https://a1e.top/tags/Mincraft/
 https://a1e.top/tags/Mumble/
+https://a1e.top/tags/keepass/
 https://a1e.top/categories/%E6%B8%B8%E6%88%8F/
 https://a1e.top/categories/%E8%BD%AF%E4%BB%B6/
 https://a1e.top/categories/Linux/

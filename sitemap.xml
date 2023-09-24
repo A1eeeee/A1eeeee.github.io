@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://a1e.top/posts/keepass.html</loc>
+    
+    <lastmod>2023-09-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://a1e.top/posts/mumble.html</loc>
     
     <lastmod>2023-09-24</lastmod>
@@ -252,6 +261,13 @@
   
   <url>
     <loc>https://a1e.top/tags/Mumble/</loc>
+    <lastmod>2023-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://a1e.top/tags/keepass/</loc>
     <lastmod>2023-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
