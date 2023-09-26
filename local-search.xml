@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/posts/bilibiliplayer.html"/>
+    <url>/posts/bilibiliplayer.html</url>
+    
+    <content type="html"><![CDATA[  使用说明：网页端打开b站点击分享，点击嵌入代码，将复制的地址填入即可<!DOCTYPE html><html><head>    <script type="text/javascript">    var show = function()    {        var text = document.getElementById("textInput").value;        var str = text.match (/aid(\S*)(&bvid)/g);        var bili = "https://player.bilibili.com/player.html?" + str        alert(bili);    }    </script></head><body>    <input type="text" id="textInput"/>    <input type="button" value="点击获取链接" onclick="show();"/></body></html>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>kaapass</title>
     <link href="/posts/keepass.html"/>
     <url>/posts/keepass.html</url>
