@@ -18,23 +18,26 @@
   <meta name="author" content="Ale">
   <meta name="keywords" content="">
   
-    <meta name="description" content="使用说明： 网页端打开b站点击分享，点击嵌入代码，将复制的地址填入即可                 var show &#x3D; function()      {          var text &#x3D; document.getElementById(&quot;textInput&quot;).value;         var str &#x3D; text.match (&#x2F;aid(\S*)(&amp;bvid)&#x2F;g);">
+    <meta name="description" content="关于CS2中的设置。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ale">
-<meta property="og:url" content="https://a1e.top/posts/bilibiliplayer.html">
+<meta property="og:title" content="cs2">
+<meta property="og:url" content="https://a1e.top/posts/cs2cfg.html">
 <meta property="og:site_name" content="Ale">
-<meta property="og:description" content="使用说明： 网页端打开b站点击分享，点击嵌入代码，将复制的地址填入即可                 var show &#x3D; function()      {          var text &#x3D; document.getElementById(&quot;textInput&quot;).value;         var str &#x3D; text.match (&#x2F;aid(\S*)(&amp;bvid)&#x2F;g);">
+<meta property="og:description" content="关于CS2中的设置。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://a1e.top/img/bilibili.jpg">
-<meta property="article:published_time" content="2023-09-26T11:12:22.777Z">
-<meta property="article:modified_time" content="2023-09-26T11:18:05.175Z">
+<meta property="og:image" content="https://a1e.top/img/cs2.png">
+<meta property="article:published_time" content="2023-09-29T13:47:40.000Z">
+<meta property="article:modified_time" content="2023-09-29T14:26:36.661Z">
 <meta property="article:author" content="Ale">
+<meta property="article:tag" content="设置">
+<meta property="article:tag" content="CS2">
+<meta property="article:tag" content="Config">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://a1e.top/img/bilibili.jpg">
+<meta name="twitter:image" content="https://a1e.top/img/cs2.png">
   
   
   
-  <title>Ale</title>
+  <title>cs2 - Ale</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -182,13 +185,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/bilibili.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/cs2.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle"></span>
+            <span id="subtitle">cs2</span>
           
         </div>
 
@@ -204,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-26 19:12" pubdate>
-          星期二, 九月 26日 2023, 7:12 晚上
+        <time datetime="2023-09-29 21:47" pubdate>
+          星期五, 九月 29日 2023, 9:47 晚上
         </time>
       </span>
     
@@ -257,48 +260,28 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">cs2</h1>
             
             
               <div class="markdown-body">
                 
-                  使用说明：
-网页端打开b站点击分享，点击嵌入代码，将复制的地址填入即可
+                <h2 id="游戏中画面设置"><a href="#游戏中画面设置" class="headerlink" title="游戏中画面设置"></a>游戏中画面设置</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/cs21.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/cs22.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
+<p>分辨率设置就是要看个人喜好了。<br>分辨率低，人物模型大，视野小<br>分辨率高，人物模型小，视野大<br>以下是4：3分辨率1280x960 VS 16：9分辨率1920：1080</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/duibi1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/img/duibi2.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
 
-<!DOCTYPE html>
+<h2 id="启动项"><a href="#启动项" class="headerlink" title="启动项"></a>启动项</h2><p>Steam中右键CSGO-&gt;属性-&gt;启动选项输入即可</p>
+<div class="code-wrapper"><pre><code class="hljs awk">-worldwide  <span class="hljs-regexp">//</span>国际服
+-perfectworld  <span class="hljs-regexp">//</span>国服
+-high <span class="hljs-regexp">//</span>将cs2优先级设置高
+</code></pre></div>
 
-<html>
-
-<head>
-    <script type="text/javascript">
-
-    var show = function()
-
-    {
-
-        var text = document.getElementById("textInput").value;
-        var str = text.match (/aid(\S*)(&bvid)/g);
-        var bili = "https://player.bilibili.com/player.html?" + str
-        alert(bili);
-
-    }
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>调整游戏整体画面亮度
+r_fullscreen_gamma <span class="hljs-number">2.6</span>
+</code></pre></div>
 
 
+</p>
 
-
-    </script>
-
-</head>
-
-<body>
-
-    <input type="text" id="textInput"/>
-
-    <input type="button" value="点击获取链接" onclick="show();"/>
-
-</body>
-
-</html>
                 
               </div>
             
@@ -306,6 +289,38 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%B8%B8%E6%88%8F/" class="category-chain-item">游戏</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AE%BE%E7%BD%AE/">#设置</a>
+      
+        <a href="/tags/CS2/">#CS2</a>
+      
+        <a href="/tags/Config/">#Config</a>
+      
+    </div>
   
 </div>
 
@@ -315,8 +330,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>https://a1e.top/posts/bilibiliplayer.html</div>
+      <div>cs2</div>
+      <div>https://a1e.top/posts/cs2cfg.html</div>
     </div>
     <div class="license-meta">
       
@@ -328,7 +343,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月26日</div>
+          <div>2023年9月29日</div>
         </div>
       
       
@@ -360,18 +375,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/cs2cfg.html" title="cs2">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">cs2</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/keepass.html" title="kaapass">
-                        <span class="hidden-mobile">kaapass</span>
+                      <a href="/posts/bilibiliplayer.html" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

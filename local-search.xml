@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>cs2</title>
+    <link href="/posts/cs2cfg.html"/>
+    <url>/posts/cs2cfg.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="游戏中画面设置"><a href="#游戏中画面设置" class="headerlink" title="游戏中画面设置"></a>游戏中画面设置</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/cs21.jpg"></div><div class="group-image-wrap"><img src="/img/cs22.jpg"></div></div></div><p>分辨率设置就是要看个人喜好了。<br>分辨率低，人物模型大，视野小<br>分辨率高，人物模型小，视野大<br>以下是4：3分辨率1280x960 VS 16：9分辨率1920：1080</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/duibi1.jpg"></div><div class="group-image-wrap"><img src="/img/duibi2.jpg"></div></div></div><h2 id="启动项"><a href="#启动项" class="headerlink" title="启动项"></a>启动项</h2><p>Steam中右键CSGO-&gt;属性-&gt;启动选项输入即可</p><div class="code-wrapper"><pre><code class="hljs awk">-worldwide  <span class="hljs-regexp">//</span>国际服-perfectworld  <span class="hljs-regexp">//</span>国服-high <span class="hljs-regexp">//</span>将cs2优先级设置高</code></pre></div><h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>调整游戏整体画面亮度r_fullscreen_gamma <span class="hljs-number">2.6</span></code></pre></div></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>游戏</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>设置</tag>
+      
+      <tag>CS2</tag>
+      
+      <tag>Config</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/posts/bilibiliplayer.html"/>
     <url>/posts/bilibiliplayer.html</url>
