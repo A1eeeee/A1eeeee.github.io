@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://a1e.top/img/smb.png">
 <meta property="article:published_time" content="2023-09-20T10:09:50.000Z">
-<meta property="article:modified_time" content="2023-09-28T16:13:11.645Z">
+<meta property="article:modified_time" content="2023-10-03T00:49:05.754Z">
 <meta property="article:author" content="Ale">
 <meta property="article:tag" content="ubuntu">
 <meta property="article:tag" content="smb">
@@ -288,7 +288,9 @@ sudo vim /etc/samba/smb.conf
 comment = 填写介绍内容
 path = 填写文件路径
 writable = yes
-valid <span class="hljs-keyword">user</span> <span class="hljs-title">= smb</span>用户名</code></pre></div>
+valid <span class="hljs-keyword">user</span> <span class="hljs-title">= smb</span>用户名
+<span class="hljs-keyword">write</span> list = 写入用户
+<span class="hljs-keyword">read</span> list = 读取用户，多用户用,进行分割</code></pre></div>
 
 <ol start="4">
 <li>修改文件权限</li>
